@@ -1,34 +1,30 @@
 "use client";
-
 import Image from "next/image";
+import { teamData } from "../shared/data";
 
 export default function Team() {
   return (
-    <>
-      <main>
+    <main>
+      <section>
+        <div>
+          <h1>{teamData.title}</h1>
+          <p>{teamData.description}</p>
+        </div>
         <section>
-          <div>
-            <h1>Meet the Team</h1>
-            <p>
-              Just take a look - each member of the team is watching your every
-              gesture and will hear your every whisper.
-            </p>
-          </div>
-
-          <section>
-            <div>
+          {teamData.members.map((member, index) => (
+            <div key={index}>
               <Image
-                src="/images/teamImage1.svg"
+                src={member.image}
                 width={500}
                 height={304}
-                alt=""
+                alt={member.name}
               />
+              <h3>{member.name}</h3>
+              <h4>{member.role}</h4>
             </div>
-            <h3>Abigail Okon</h3>
-            <h4>Vice President Sales</h4>
-          </section>
+          ))}
         </section>
-      </main>
-    </>
+      </section>
+    </main>
   );
 }
