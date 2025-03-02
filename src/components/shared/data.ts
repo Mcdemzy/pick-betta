@@ -144,6 +144,16 @@ export const teamData = {
       name: "Abigail Okon",
       role: "Vice President Sales",
     },
+    {
+      image: "/images/teamImage1.svg",
+      name: "Abigail Okon",
+      role: "Vice President Sales",
+    },
+    {
+      image: "/images/teamImage1.svg",
+      name: "Abigail Okon",
+      role: "Vice President Sales",
+    },
     // Add more team members here
   ],
 };
