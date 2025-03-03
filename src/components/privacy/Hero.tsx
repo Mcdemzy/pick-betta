@@ -3,10 +3,10 @@
 export default function Hero() {
   return (
     <>
-      <main>
-        <section>
-          <aside>
-            <h4>Why Do We Collect Personal Information?</h4>
+      <main className="bg-[#FFFFFF] px-20 py-25">
+        <section className="flex gap-x-12.5">
+          <aside className="bg-[#ECFDF3] py-5 px-2.5 h-[436px] min-w-[361px] flex flex-col gap-y-[22px]">
+            <h4 className="">Why Do We Collect Personal Information?</h4>
             <h4>What Information Do We Collect?</h4>
             <h4>When Do We Disclose/Share Your Information?</h4>
             <h4>How Do We Protect Your Personal Information?</h4>
@@ -16,8 +16,8 @@ export default function Hero() {
           </aside>
 
           {/*  */}
-          <aside>
-            <div>
+          <aside className="flex flex-col gap-y-10 text-justify max-w-[869px]">
+            <div className="flex flex-col gap-y-5">
               <h3>Our Policy</h3>
               <p>
                 PickBetta's privacy policy covers the collection and use of
@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
 
             <div>
-              <ol>
+              <ol className="flex flex-col gap-y-10 list-decimal">
                 <div>
                   <li>Why Do We Collect Personal Information?</li>
                   <p>
@@ -66,6 +66,9 @@ export default function Hero() {
                     websites, which helps us determine how best to provide
                     useful information to customers and understand which parts
                     of our websites and services are of most interest to them.
+                    <br />
+                    <br />
+                    <br />
                     The PickBetta website allows you to create a "User ID" based
                     on your personal information. This convenient service saves
                     you time and allows for easier use of our web services.
@@ -79,14 +82,18 @@ export default function Hero() {
                     looks up the information it needs to assist you. In
                     addition, if you update the information associated with your
                     User ID, it will be available for all your transactions with
-                    PickBetta globally. If you use a bulletin board or chat room
-                    on a PickBetta website, you should be aware that any
-                    information you share is visible to other users. Personally
-                    identifiable information you submit to one of these forums
-                    can be read, collected, or used by other individuals to send
-                    you unsolicited messages. PickBetta is not responsible for
-                    the personally identifiable information you choose to submit
-                    in these forums.
+                    PickBetta globally.
+                    <br />
+                    <br />
+                    <br />
+                    If you use a bulletin board or chat room on a PickBetta
+                    website, you should be aware that any information you share
+                    is visible to other users. Personally identifiable
+                    information you submit to one of these forums can be read,
+                    collected, or used by other individuals to send you
+                    unsolicited messages. PickBetta is not responsible for the
+                    personally identifiable information you choose to submit in
+                    these forums.
                   </p>
                 </div>
 
@@ -115,11 +122,15 @@ export default function Hero() {
                     products, have products delivered to you, receive customer
                     service, provide us feedback to improve our products and
                     services, or access certain services, offers, and content on
-                    the PickBetta website. At times, we may be required by law
-                    or litigation to disclose your personal information. We may
-                    also disclose information about you if we determine that for
-                    national security, law enforcement, or other issues of
-                    public importance, disclosure is necessary.
+                    the PickBetta website.
+                    <br />
+                    <br />
+                    <br />
+                    At times, we may be required by law or litigation to
+                    disclose your personal information. We may also disclose
+                    information about you if we determine that for national
+                    security, law enforcement, or other issues of public
+                    importance, disclosure is necessary.
                   </p>
                 </div>
 
@@ -130,18 +141,24 @@ export default function Hero() {
                     technical, and physical measures—to safeguard your personal
                     information against loss, theft, and misuse, as well as
                     unauthorized access, disclosure, alteration, and
-                    destruction. The PickBetta Online Store and website use
-                    Secure Sockets Layer (SSL) encryption on all web pages where
-                    personal information is required. To make purchases from
-                    PickBetta, you must use an SSL-enabled browser such as
-                    Safari, Netscape Navigator 3.0 or later, or Internet
-                    Explorer. Doing so protects the confidentiality of your
-                    personal and credit card information while it's transmitted
-                    over the Internet. You can help us by also taking
-                    precautions to protect your personal data when you are on
-                    the Internet. Change your passwords often using a
-                    combination of letters and numbers, and make sure you use a
-                    secure web browser like Safari.
+                    destruction.
+                    <br />
+                    <br />
+                    <br />
+                    The PickBetta Online Store and website use Secure Sockets
+                    Layer (SSL) encryption on all web pages where personal
+                    information is required. To make purchases from PickBetta,
+                    you must use an SSL-enabled browser such as Safari, Netscape
+                    Navigator 3.0 or later, or Internet Explorer. Doing so
+                    protects the confidentiality of your personal and credit
+                    card information while it's transmitted over the Internet.
+                    <br />
+                    <br />
+                    <br />
+                    You can help us by also taking precautions to protect your
+                    personal data when you are on the Internet. Change your
+                    passwords often using a combination of letters and numbers,
+                    and make sure you use a secure web browser like Safari.
                   </p>
                 </div>
 
@@ -173,28 +190,42 @@ export default function Hero() {
                     more rewarding, as well as to study the effectiveness of our
                     customer communications. We use cookies to customize your
                     experience and provide greater convenience each time you
-                    interact with us. As is true of most websites, we gather
-                    certain information automatically and store it in log files.
-                    This information includes internet protocol (IP) addresses,
-                    browser type, internet service provider (ISP),
-                    referring/exit pages, operating system, date/time stamp, and
-                    clickstream data. We use this information, which does not
-                    identify individual users, to analyze trends, administer the
-                    site, track users' movements around the site, and gather
-                    demographic information about our user base as a whole.
-                    PickBetta will not use the information collected to market
-                    directly to any person. In some of our email messages, we
-                    use a "click-through URL" linked to content on the PickBetta
-                    website. When a customer clicks one of these URLs, they pass
-                    through our web server before arriving at the destination
-                    web page. We track this click-through data to help us
-                    determine interest in particular topics and measure the
-                    effectiveness of our customer communications. If you prefer
-                    not to be tracked, simply avoid clicking text or graphic
-                    links in the email. In addition, we use pixel tags—tiny
-                    graphic images—to tell us what parts of our website
-                    customers have visited or to measure the effectiveness of
-                    searches customers perform on our site.
+                    interact with us.
+                    <br />
+                    <br />
+                    <br />
+                    As is true of most websites, we gather certain information
+                    automatically and store it in log files. This information
+                    includes internet protocol (IP) addresses, browser type,
+                    internet service provider (ISP), referring/exit pages,
+                    operating system, date/time stamp, and clickstream data.
+                    <br />
+                    <br />
+                    <br />
+                    We use this information, which does not identify individual
+                    users, to analyze trends, administer the site, track users'
+                    movements around the site, and gather demographic
+                    information about our user base as a whole. PickBetta will
+                    not use the information collected to market directly to any
+                    person.
+                    <br />
+                    <br />
+                    <br />
+                    In some of our email messages, we use a "click-through URL"
+                    linked to content on the PickBetta website. When a customer
+                    clicks one of these URLs, they pass through our web server
+                    before arriving at the destination web page. We track this
+                    click-through data to help us determine interest in
+                    particular topics and measure the effectiveness of our
+                    customer communications. If you prefer not to be tracked,
+                    simply avoid clicking text or graphic links in the email.
+                    <br />
+                    <br />
+                    <br />
+                    In addition, we use pixel tags—tiny graphic images—to tell
+                    us what parts of our website customers have visited or to
+                    measure the effectiveness of searches customers perform on
+                    our site.
                   </p>
                 </div>
 
@@ -209,10 +240,14 @@ export default function Hero() {
                     the Online Privacy Alliance—to preserve privacy rights on
                     the Internet and in all aspects of electronic commerce. We
                     do not knowingly solicit personal information from minors or
-                    send them requests for personal information. PickBetta's
-                    website has links to the sites of other companies. PickBetta
-                    is not responsible for their privacy practices. We encourage
-                    you to learn about the privacy policies of those companies.
+                    send them requests for personal information.
+                    <br />
+                    <br />
+                    <br />
+                    PickBetta's website has links to the sites of other
+                    companies. PickBetta is not responsible for their privacy
+                    practices. We encourage you to learn about the privacy
+                    policies of those companies.
                   </p>
                 </div>
               </ol>
