@@ -56,10 +56,10 @@ export default function HeroSection() {
             <span className="text-[#06543C]">Sports Betting</span> Data
           </h1>
           <h3 className="text-lg sm:text-xl text-[#475467] max-w-2xl mx-auto mb-6">
-            Unlock your edge with PickBetta&apos;s sports betting data
-            solutions. With proprietary algorithms & models, AI-driven insights,
-            and unique predictive tools, we give bettors the ultimate advantage
-            to make winning bets.
+            Unlock your edge with PickBetta's sports betting data solutions.
+            With proprietary algorithms & models, AI-driven insights, and unique
+            predictive tools, we give bettors the ultimate advantage to make
+            winning bets.
           </h3>
           <p className="text-sm sm:text-base text-[#06543C] font-medium underline">
             We don’t advise you to pick, we advise you to pickbetta!
