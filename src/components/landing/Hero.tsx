@@ -76,7 +76,7 @@ export default function HeroSection() {
         {/* Hero Section Image */}
         <div className="flex justify-center mt-10">
           <Image
-            src="/images/heroImage.svg"
+            src="/images/hero.svg"
             width={761}
             height={604}
             alt="hero section image"

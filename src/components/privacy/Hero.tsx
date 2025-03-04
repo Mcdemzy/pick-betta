@@ -16,7 +16,7 @@ export default function Hero() {
           </aside>
 
           {/*  */}
-          <aside className="flex flex-col gap-y-10 text-justify max-w-[869px]">
+          <aside className="flex flex-col gap-y-10 max-w-[869px]">
             <div className="flex flex-col gap-y-5">
               <h3>Our Policy</h3>
               <p>
