@@ -45,7 +45,7 @@ export default function FAQPage() {
       {/* Desktop Layout */}
       <div className="hidden md:flex w-full gap-8 mt-6 max-w-[1280px] m-auto">
         {/* Sidebar */}
-        <aside className="w-1/4 min-w-[250px] relative bg-[#ECFDF3] py-5 px-2.5">
+        <aside className="w-1/4 min-w-[250px] h-fit relative bg-[#ECFDF3] py-5 px-2.5">
           {/* Ruler */}
           <div
             className="w-1 rounded-[42px] bg-[#06543C] transition-all duration-300"
