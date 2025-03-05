@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("/public/fonts/Gilroy-Bold.ttf") format("ttf"),
+    url("/public/fonts/Gilroy-Heavy.ttf") format("ttf"),
+    url("/public/fonts/Gilroy-Light.ttf") format("ttf"),
+    url("/public/fonts/Gilroy-Medium.ttf") format("ttf"),
+    url("/public/fonts/Gilroy-Regular.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -22,4 +34,24 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Montserrat", sans-serif;
+}
+
+.gilroy-bold {
+  font-family: "Gilroy-Bold", sans-serif;
+}
+
+.gilroy-heavy {
+  font-family: "Gilroy-Heavy", sans-serif;
+}
+
+.gilroy-light {
+  font-family: "Gilroy-Light", sans-serif;
+}
+
+.gilroy-medium {
+  font-family: "Gilroy-Medium", sans-serif;
+}
+
+.gilroy-regular {
+  font-family: "Gilroy-Regular", sans-serif;
 }
