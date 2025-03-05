@@ -51,7 +51,7 @@ export default function HeroSection() {
       <main className="mt-10 px-4 sm:px-8">
         {/* Text Content */}
         <div className="text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 gilroy-bold">
+          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6">
             Unlock the Power of <br />
             <span className="text-[#06543C]">Sports Betting</span> Data
           </h1>
