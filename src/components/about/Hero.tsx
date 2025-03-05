@@ -4,7 +4,7 @@ import { heroData } from "../shared/data";
 
 export default function Hero() {
   return (
-    <main className="p-5">
+    <main className="p-5 pt-[131px]">
       <section className="mt-7.5 flex flex-col gap-y-7.5">
         <div className="flex flex-col gap-2">
           <h1 className="text-[#101828] text-[2.25rem] leading-11 md:text-[3.75rem] font-bold md:leading-[78px] tracking-[-2%] mb-4 text-center">
