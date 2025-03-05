@@ -48,7 +48,7 @@ export default function HeroSection() {
   return (
     <>
       {/* Hero Section */}
-      <main className="mt-10 px-4 sm:px-8">
+      <main className="pt-[131px] px-4 sm:px-8">
         {/* Text Content */}
         <div className="text-center">
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6">
