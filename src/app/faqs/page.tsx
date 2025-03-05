@@ -15,7 +15,7 @@ export default function Home() {
         <section>
           <HeroSection />
           <FaqSection />
-          {/* <Banner /> */}
+          <Banner />
           <Footer />
         </section>
       </main>
