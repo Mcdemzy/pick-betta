@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Gilroy-Bold";
-  src: url("/public/fonts/Gilroy-Bold.ttf") format("ttf"),
+  src: url("/public/fonts/gilroy-bold.ttf") format("ttf"),
     url("/public/fonts/Gilroy-Heavy.ttf") format("ttf"),
     url("/public/fonts/Gilroy-Light.ttf") format("ttf"),
     url("/public/fonts/Gilroy-Medium.ttf") format("ttf"),
@@ -39,7 +39,7 @@ body {
 .gilroy-bold {
   font-family: "Gilroy-Bold", sans-serif;
 }
-
+/* 
 .gilroy-heavy {
   font-family: "Gilroy-Heavy", sans-serif;
 }
@@ -54,4 +54,4 @@ body {
 
 .gilroy-regular {
   font-family: "Gilroy-Regular", sans-serif;
-}
+} */

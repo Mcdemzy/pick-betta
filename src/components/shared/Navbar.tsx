@@ -30,9 +30,9 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full h-[101px] px-5 pt-11 fixed z-50">
+      <nav className="w-full h-[101px] px-5 pt-11 bg-[#ECFDF3]">
         {/* Mobile View Navbar (visible only on small screens) */}
-        <section className="sm:hidden w-full m-auto bg-[#ECFDF3] rounded-full py-3 px-5 flex items-center justify-between backdrop-blur-sm">
+        <section className="sm:hidden w-full m-auto bg-[#ECFDF3] rounded-full py-3 px-5 flex items-center shadow-sm justify-between backdrop-blur-sm">
           <Link href="/">
             <Image
               src="/images/logo.svg"
