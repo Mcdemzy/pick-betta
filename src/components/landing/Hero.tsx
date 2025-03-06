@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-// Reusable Section Component
 const Section = ({
   title,
   highlight,

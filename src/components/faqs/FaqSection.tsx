@@ -12,15 +12,15 @@ export default function FAQPage() {
 
   const toggleSection = (section: FaqSections) => {
     if (openSection === section) {
-      setOpenSection(null); // Close if already open
+      setOpenSection(null);
     } else {
-      setOpenSection(section); // Open new section and close others
+      setOpenSection(section);
     }
     setActiveSection(section);
   };
 
   const toggleQuestion = (question: string) => {
-    setOpenQuestion((prev) => (prev === question ? null : question)); // Close other questions
+    setOpenQuestion((prev) => (prev === question ? null : question));
   };
 
   return (

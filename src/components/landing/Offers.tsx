@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-// Reusable Offer Card Component
 const OfferCard = ({
   iconSrc,
   title,

@@ -1,17 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { policySections } from "../shared/data"; // Import the data
+import { policySections } from "../shared/data";
 
 export default function Hero() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  // Function to handle sidebar item clicks
   const handleSidebarClick = (id: string) => {
-    setActiveSection(id); // Set the active section
-    const section = document.getElementById(id); // Find the section by ID
+    setActiveSection(id);
+    const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" }); // Scroll to the section
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

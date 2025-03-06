@@ -9,9 +9,8 @@ import { IoMenu } from "react-icons/io5";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
 
-  // Define navigation links for desktop
   const desktopNavLinks = [
     { href: "/about", label: "About Us" },
     { href: "/betta-gpt", label: "Betta GPT" },
@@ -19,7 +18,6 @@ export default function Navbar() {
     { href: "/faqs", label: "FAQs" },
   ];
 
-  // Define navigation links for mobile
   const mobileNavLinks = [
     { href: "/insight", label: "Betta Insight" },
     { href: "/pricing", label: "Pricing" },
@@ -29,9 +27,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Navbar */}
       <nav className="w-full h-[101px] px-5 pt-11 bg-[#ECFDF3]">
-        {/* Mobile View Navbar (visible only on small screens) */}
         <section className="sm:hidden w-full m-auto bg-[#ECFDF3] rounded-full py-3 px-5 flex items-center shadow-sm justify-between backdrop-blur-sm">
           <Link href="/">
             <Image

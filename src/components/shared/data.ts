@@ -154,7 +154,6 @@ export const teamData = {
       name: "Abigail Okon",
       role: "Vice President Sales",
     },
-    // Add more team members here
   ],
 };
 
@@ -814,7 +813,7 @@ export const faqData: Record<FaqSections, FaqItem[]> = {
 };
 
 export interface PolicySection {
-  id: string; // Add an ID for each section
+  id: string;
   title: string;
   content: string;
 }
