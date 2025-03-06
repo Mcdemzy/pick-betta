@@ -1,4 +1,3 @@
-// data.ts
 export const heroData = {
   title: "About us",
   description:
@@ -813,3 +812,54 @@ export const faqData: Record<FaqSections, FaqItem[]> = {
     },
   ],
 };
+
+export interface PolicySection {
+  id: string; // Add an ID for each section
+  title: string;
+  content: string;
+}
+
+export const policySections: PolicySection[] = [
+  {
+    id: "why-collect",
+    title: "Why Do We Collect Personal Information?",
+    content:
+      "We collect personal information because it helps us deliver a superior level of customer service. It enables us to give you convenient access to our products and services and focus on categories of greatest interest to you. In addition, your personal information helps us keep you informed about the latest product announcements, updates, special offers, and events that you might be interested in.",
+  },
+  {
+    id: "what-collect",
+    title: "What Information Do We Collect?",
+    content:
+      "There are several situations in which your personal information can help us provide better service. For example, we may ask for your personal information when you’re discussing a service issue on the phone with an associate, downloading a product, registering your products, or purchasing a product. At such times, we may collect personal information relevant to the situation, such as your name, mailing address, phone number, email address, and contact preferences; your credit card information; and information about the PickBetta products you own, such as invoice numbers and dates of purchase. We also collect information regarding customer activities on our website and on related websites, which helps us determine how best to provide useful information to customers and understand which parts of our websites and services are of most interest to them.",
+  },
+  {
+    id: "when-disclose",
+    title: "When Do We Disclose/Share Your Information?",
+    content:
+      "PickBetta takes your privacy very seriously. Be assured that PickBetta does not sell or rent your contact information to other marketers. To help us provide superior service, your personal information may be shared with legal entities within the PickBetta group globally, who will safeguard it in accordance with PickBetta's privacy policy. There are also times when it may be advantageous for PickBetta to make certain personal information about you available to companies that PickBetta has a strategic relationship with or that perform work for PickBetta to provide products and services to you on our behalf. These companies may help us process information, extend credit, fulfill customer orders, deliver products to you, manage and enhance customer data, provide customer service, assess your interest in our products and services, or conduct customer research or satisfaction surveys. These companies are also obligated to protect your personal information in accordance with PickBetta's policies. Without such information being made available, it would be difficult for you to purchase products, have products delivered to you, receive customer service, provide us feedback to improve our products and services, or access certain services, offers, and content on the PickBetta website.",
+  },
+  {
+    id: "how-protect",
+    title: "How Do We Protect Your Personal Information?",
+    content:
+      "PickBetta takes precautions—including administrative, technical, and physical measures—to safeguard your personal information against loss, theft, and misuse, as well as unauthorized access, disclosure, alteration, and destruction.",
+  },
+  {
+    id: "integrity",
+    title: "Integrity of Your Personal Information",
+    content:
+      "PickBetta has safeguards in place to keep your personal information accurate, complete, and up to date for the purposes for which it is used. Naturally, you always have the right to access and correct the personal information you have provided. You can request a copy of your personal information, your product registration history, and your interactions with our sales and support agents by contacting us at the email address below.",
+  },
+  {
+    id: "cookies",
+    title: "Cookies and Other Technologies",
+    content:
+      "As is standard practice on most websites, PickBetta's website may use 'cookies' and other technologies to help us understand which parts of our websites are the most popular, where our visitors are going, and how much time they spend there. We also use cookies and other technologies to ensure that our online advertising is bringing customers to our products and services. We use cookies and other technologies to study traffic patterns on our website, to make it even more rewarding, as well as to study the effectiveness of our customer communications. We use cookies to customize your experience and provide greater convenience each time you interact with us.",
+  },
+  {
+    id: "commitment",
+    title: "PickBetta's Commitment to Your Privacy",
+    content:
+      "As we said, PickBetta takes protecting your privacy very seriously. To make sure your personal information is secure, we communicate these guidelines to PickBetta employees and strictly enforce privacy safeguards within the company. In addition, PickBetta supports industry initiatives—such as the Online Privacy Alliance—to preserve privacy rights on the Internet and in all aspects of electronic commerce. We do not knowingly solicit personal information from minors or send them requests for personal information.",
+  },
+];
