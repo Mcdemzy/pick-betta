@@ -31,7 +31,7 @@ export default function HeroSection() {
       </section>
 
       {/* Hero Section Image */}
-      <section className="w-full">
+      <section className="w-full mt-10">
         <div className="flex justify-center">
           <div className="w-[334px] h-[266px] md:w-[761px] md:h-[500px] overflow-hidden">
             <Image
