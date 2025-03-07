@@ -894,3 +894,41 @@ export const sectionsData = [
     reverse: true,
   },
 ];
+
+export const offersData = {
+  title: "What Do ",
+  highlight: "We Offer",
+  description:
+    "PickBetta is your go-to source for trustworthy sports betting data. With nearly a century of sports data at your fingertips, our platform provides:",
+  cards: [
+    {
+      iconSrc: "/icons/business.svg",
+      title: "Fact-Checked Insights",
+      description:
+        "Every stat, trend, and piece of data is rigorously verified to ensure accuracy.",
+    },
+    {
+      iconSrc: "/icons/profile.svg",
+      title: "Customizable Tools",
+      description:
+        "Tailor your experience with personalized dashboards, real-time alerts, and interactive features.",
+    },
+    {
+      iconSrc: "/icons/data.svg",
+      title: "Comprehensive Coverage",
+      description:
+        "Whether you’re into NFL, NHL, NCAAF, NCAAB, or NBA, we’ve got you covered with detailed analysis and timely data.",
+    },
+  ],
+};
+
+export const deliverValueData = {
+  title: "How We Deliver Value",
+  highlight: "Deliver Value",
+  description:
+    "We deliver unparalleled data through a cutting-edge online mobile portal designed for ease of use and accessibility. Our platform is built to reach the entire betting community through the power of word-of-mouth. We know that once you experience the value PickBetta offers, you’ll spread the word—because, like us, you recognize the difference that accurate, unbiased data makes.",
+  ctaText:
+    "Join us at PickBetta—where we don’t advise you to pick, we advise you to pick better. This is more than just a product; it’s a movement for a smarter, more informed betting community.",
+  imageSrc: "/images/deliverValueImage.svg",
+  imageAlt: "How We Deliver Value",
+};
