@@ -862,3 +862,35 @@ export const policySections: PolicySection[] = [
       "As we said, PickBetta takes protecting your privacy very seriously. To make sure your personal information is secure, we communicate these guidelines to PickBetta employees and strictly enforce privacy safeguards within the company. In addition, PickBetta supports industry initiatives—such as the Online Privacy Alliance—to preserve privacy rights on the Internet and in all aspects of electronic commerce. We do not knowingly solicit personal information from minors or send them requests for personal information.",
   },
 ];
+
+export const heroSectionData = {
+  title: "Unlock the Power of Sports Betting Data",
+  highlight: "Sports Betting",
+  description:
+    "Unlock your edge with PickBetta's sports betting data solutions. With proprietary algorithms & models, AI-driven insights, and unique predictive tools, we give bettors the ultimate advantage to make winning bets.",
+  ctaText: "We don’t advise you to pick, we advise you to pickbetta!",
+  buttonText: "Start free trial",
+  imageSrc: "/images/hero.svg",
+  imageAlt: "hero section image",
+};
+
+export const sectionsData = [
+  {
+    title: "Who",
+    highlight: "We Are",
+    description:
+      "We are sports bettors just like you. We have accounts with Fanduel & Draftkings. We pay handicappers for picks but don't tell anyone that we do it. This platform is designed by bettors, for bettors. We understand what you need because we are in the game with you.",
+    imageSrc: "/images/lpImage1.png",
+    imageAlt: "round table image",
+    reverse: false,
+  },
+  {
+    title: "Why Create",
+    highlight: "PickBetta",
+    description:
+      "Sports bettors deserve access to data. PickBetta fills a critical gap- Sports Betting Data as a service. Our goal is to empower you with the data you need to make informed, confident betting decisions. No fluff, no gimmicks. Only value!",
+    imageSrc: "/images/lpImage2.jpeg",
+    imageAlt: "round table image",
+    reverse: true,
+  },
+];

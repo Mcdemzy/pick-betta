@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { heroSectionData, sectionsData } from "../shared/data";
 
 const Section = ({
   title,
@@ -53,24 +54,21 @@ export default function HeroSection() {
         {/* Text Content */}
         <div className="text-center">
           <h1 className="text-4xl sm:text-6xl font-bold leading-11 md:leading-19.5 mb-6">
-            Unlock the Power of <br />
-            <span className="text-[#06543C]">Sports Betting</span> Data
+            {heroSectionData.title} <br />
+            <span className="text-[#06543C]">{heroSectionData.highlight}</span>
           </h1>
           <h3 className="text-lg sm:text-xl text-[#475467] max-w-2xl mx-auto mb-6">
-            Unlock your edge with PickBetta's sports betting data solutions.
-            With proprietary algorithms & models, AI-driven insights, and unique
-            predictive tools, we give bettors the ultimate advantage to make
-            winning bets.
+            {heroSectionData.description}
           </h3>
           <p className="text-sm sm:text-base text-[#06543C] font-medium underline">
-            We don’t advise you to pick, we advise you to pickbetta!
+            {heroSectionData.ctaText}
           </p>
         </div>
 
         {/* Free Trial Button */}
         <div className="flex justify-center mt-8 cursor-pointer">
           <button className="bg-[#06543C] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#054030] transition-colors duration-300 cursor-pointer">
-            Start free trial
+            {heroSectionData.buttonText}
           </button>
         </div>
 
@@ -78,10 +76,10 @@ export default function HeroSection() {
         <div className="flex justify-center mt-10 pb-7.5 md:pb-0">
           <div className="w-[334px] h-[266px] md:w-[761px] md:h-[500px] overflow-hidden">
             <Image
-              src="/images/hero.svg"
+              src={heroSectionData.imageSrc}
               width={761}
               height={604}
-              alt="hero section image"
+              alt={heroSectionData.imageAlt}
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -90,24 +88,17 @@ export default function HeroSection() {
 
       {/* Second Section */}
       <main className="bg-[#ECFDF3]">
-        {/* Who We Are Section */}
-        <Section
-          title="Who"
-          highlight="We Are"
-          description="We are sports bettors just like you. We have accounts with Fanduel & Draftkings. We pay handicappers for picks but don't tell anyone that we do it. This platform is designed by bettors, for bettors. We understand what you need because we are in the game with you."
-          imageSrc="/images/lpImage1.png"
-          imageAlt="round table image"
-        />
-
-        {/* Why Create PickBetta Section */}
-        <Section
-          title="Why Create"
-          highlight="PickBetta"
-          description="Sports bettors deserve access to data. PickBetta fills a critical gap- Sports Betting Data as a service. Our goal is to empower you with the data you need to make informed, confident betting decisions. No fluff, no gimmicks. Only value!"
-          imageSrc="/images/lpImage2.jpeg"
-          imageAlt="round table image"
-          reverse
-        />
+        {sectionsData.map((section, index) => (
+          <Section
+            key={index}
+            title={section.title}
+            highlight={section.highlight}
+            description={section.description}
+            imageSrc={section.imageSrc}
+            imageAlt={section.imageAlt}
+            reverse={section.reverse}
+          />
+        ))}
       </main>
     </>
   );
