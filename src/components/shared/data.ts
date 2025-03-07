@@ -864,7 +864,7 @@ export const policySections: PolicySection[] = [
 ];
 
 export const heroSectionData = {
-  title: "Unlock the Power of Sports Betting Data",
+  title: "Unlock the Power of",
   highlight: "Sports Betting",
   description:
     "Unlock your edge with PickBetta's sports betting data solutions. With proprietary algorithms & models, AI-driven insights, and unique predictive tools, we give bettors the ultimate advantage to make winning bets.",

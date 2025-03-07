@@ -12,7 +12,10 @@ export default function HeroSection() {
         <div className="text-center max-w-[800px] flex flex-col gap-4 md:gap-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#101828] leading-tight tracking-tight">
             {heroSectionData.title} <br className="hidden sm:block" />
-            <span className="text-[#06543C]">{heroSectionData.highlight}</span>
+            <span className="text-[#06543C]">
+              {heroSectionData.highlight}
+            </span>{" "}
+            Data
           </h1>
           <p className="text-[#475467] text-base sm:text-lg md:text-xl font-medium leading-relaxed">
             {heroSectionData.description}
