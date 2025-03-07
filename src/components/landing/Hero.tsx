@@ -20,10 +20,10 @@ const Section = ({
   <section
     className={`flex flex-col ${
       reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-    } justify-between items-center gap-12 max-w-7xl mx-auto py-16 px-4 sm:px-8`}
+    } justify-between items-center gap-12 max-w-7xl mx-auto md:py-16 px-5 py-7.5 md:px-4 sm:px-8`}
   >
     {/* Image */}
-    <div className="flex-1">
+    <div className="flex-1 order-2 md:order-1">
       <Image
         src={imageSrc}
         width={557}
@@ -35,10 +35,12 @@ const Section = ({
 
     {/* Text Content */}
     <div className="flex-1 max-w-2xl">
-      <h2 className="text-4xl sm:text-5xl font-medium mb-6">
+      <h2 className="md:text-5xl text-2xl leading-7 md:leading-14 md:tracking-[-2%] gilroy-bold font-bold mb-6">
         {title} <span className="text-[#06543C]">{highlight}</span>
       </h2>
-      <p className="text-lg text-[#667085] leading-8">{description}</p>
+      <p className="md:text-lg text-[#667085] leading-6 md:leading-7.5 font-medium">
+        {description}
+      </p>
     </div>
   </section>
 );
@@ -47,10 +49,10 @@ export default function HeroSection() {
   return (
     <>
       {/* Hero Section */}
-      <main className="pt-[131px] px-4 sm:px-8">
+      <main className="md:pt-8 pt-7.5 px-4 sm:px-8 bg-[#D1FADF]">
         {/* Text Content */}
         <div className="text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-bold leading-11 md:leading-19.5 mb-6">
             Unlock the Power of <br />
             <span className="text-[#06543C]">Sports Betting</span> Data
           </h1>
@@ -66,26 +68,28 @@ export default function HeroSection() {
         </div>
 
         {/* Free Trial Button */}
-        <div className="flex justify-center mt-8">
-          <button className="bg-[#06543C] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#054030] transition-colors duration-300">
+        <div className="flex justify-center mt-8 cursor-pointer">
+          <button className="bg-[#06543C] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#054030] transition-colors duration-300 cursor-pointer">
             Start free trial
           </button>
         </div>
 
         {/* Hero Section Image */}
-        <div className="flex justify-center mt-10">
-          <Image
-            src="/images/hero.svg"
-            width={761}
-            height={604}
-            alt="hero section image"
-            className="w-full max-w-4xl h-auto"
-          />
+        <div className="flex justify-center mt-10 pb-7.5 md:pb-0">
+          <div className="w-[334px] h-[266px] md:w-[761px] md:h-[500px] overflow-hidden">
+            <Image
+              src="/images/hero.svg"
+              width={761}
+              height={604}
+              alt="hero section image"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
         </div>
       </main>
 
       {/* Second Section */}
-      <main className="bg-[#ECFDF3] py-16">
+      <main className="bg-[#ECFDF3]">
         {/* Who We Are Section */}
         <Section
           title="Who"

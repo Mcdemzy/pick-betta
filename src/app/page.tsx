@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <section className="min-h-screen bg-[#ECFDF3] w-full">
+        <section className="min-h-screen w-full">
           <Navbar />
           <HeroSection />
           <Offers />
