@@ -29,7 +29,7 @@ export default function DeliverValueSection() {
             {deliverValueData.description}
           </p>
           <p className="text-lg font-medium text-[#667085]">
-            <span className="font-semibold text-[#101828]">
+            <span className="font-semibold text-[#475467]">
               {deliverValueData.ctaText}
             </span>
           </p>
