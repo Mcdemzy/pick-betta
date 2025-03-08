@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import FloatingLabelInput from "@/components/auth/FloatingLabelInput";
 import AuthSidebar from "@/components/auth/AuthSidebar";
 import PhoneNumberInput from "@/components/auth/PhoneNumberInput";
+import EmailPopup from "@/components/auth/EmailPopup";
 import Link from "next/link";
 
 const Signup = () => {
@@ -13,6 +15,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const isFormValid =
     username.trim() !== "" &&
@@ -20,6 +23,13 @@ const Signup = () => {
     password.trim() !== "" &&
     confirmPassword.trim() !== "" &&
     termsAccepted;
+
+  const handleSignup = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isFormValid) {
+      setShowPopup(true);
+    }
+  };
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row">
@@ -42,11 +52,11 @@ const Signup = () => {
           <h2 className="md:text-4xl md:leading-11 md:tracking-[-2%] text-[1.5rem] font-semibold text-[#101828] text-center">
             Sign up for an account
           </h2>
-          <p className="mb-6 mt-2.5 text-[.75rem] md:text-[1rem] text-[#667085] text-center font-normal md:leading-6">
+          <p className="mb-6 mt-2.5 text-[.875rem] md:text-[1rem] text-[#667085] text-center font-normal md:leading-6">
             Get started today by entering just a few details
           </p>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSignup}>
             <FloatingLabelInput
               type="text"
               placeholder="Enter Username"
@@ -83,11 +93,11 @@ const Signup = () => {
                 required
               />
               <label htmlFor="terms">
-                I agree to the
+                I agree to the{" "}
                 <a href="#" className="text-[#06543C] underline">
                   {" "}
                   Terms & Conditions{" "}
-                </a>
+                </a>{" "}
                 and
                 <a href="#" className="text-[#06543C] underline">
                   {" "}
@@ -99,7 +109,7 @@ const Signup = () => {
             <button
               type="submit"
               disabled={!isFormValid}
-              className={`w-full rounded px-4 py-2 text-white cursor-pointer ${
+              className={`w-full rounded px-4 py-2 text-white font-semibold ${
                 isFormValid ? "bg-[#06543C]" : "bg-[#98A2B3] cursor-not-allowed"
               }`}
             >
@@ -107,7 +117,7 @@ const Signup = () => {
             </button>
           </form>
 
-          <p className="mt-6 text-sm font-medium md:leading-5.5 text-center text-[#344054]">
+          <p className="mt-6 text-sm font-medium text-center text-[#344054]">
             Already have an account?{" "}
             <Link href="/login" className="text-[#06543C] font-semibold">
               Login
@@ -119,6 +129,11 @@ const Signup = () => {
       <p className="text-[#667085] absolute right-8 text-sm bottom-4 hidden md:block">
         Copyright 2025
       </p>
+
+      {/* Show Email Verification Popup */}
+      {showPopup && (
+        <EmailPopup email={email} onClose={() => setShowPopup(false)} />
+      )}
     </main>
   );
 };
