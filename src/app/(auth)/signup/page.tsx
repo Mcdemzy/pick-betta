@@ -49,7 +49,7 @@ const Signup = () => {
           <form className="space-y-6">
             <FloatingLabelInput
               type="text"
-              placeholder="Username"
+              placeholder="Enter Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
