@@ -38,7 +38,7 @@ const FloatingLabelInput = ({
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         placeholder={!focused && !value ? placeholder : ""}
-        className="w-full border px-4 py-2 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#06543C] text-gray-900 pr-10"
+        className="w-full border border-[#D0D5DD] px-4 py-2 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#06543C] text-[#98A2B3] md:leading-6 pr-10"
       />
 
       {isPasswordField && (

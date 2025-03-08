@@ -5,6 +5,7 @@ import Image from "next/image";
 import FloatingLabelInput from "@/components/auth/FloatingLabelInput";
 import AuthSidebar from "@/components/auth/AuthSidebar";
 import PhoneNumberInput from "@/components/auth/PhoneNumberInput";
+import Link from "next/link";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -21,7 +22,7 @@ const Signup = () => {
     termsAccepted;
 
   return (
-    <main className="h-screen flex flex-col md:flex-row">
+    <main className="min-h-screen flex flex-col md:flex-row">
       {/* Left Sidebar */}
       <AuthSidebar />
 
@@ -38,10 +39,10 @@ const Signup = () => {
             />
           </div>
 
-          <h2 className="md:text-[2rem] text-[1.5rem] font-semibold text-gray-900 text-center">
+          <h2 className="md:text-4xl md:leading-11 md:tracking-[-2%] text-[1.5rem] font-semibold text-[#101828] text-center">
             Sign up for an account
           </h2>
-          <p className="mb-6 text-[.75rem] md:text-[1rem] text-[#667085] text-center font-normal leading-6">
+          <p className="mb-6 mt-2.5 text-[.75rem] md:text-[1rem] text-[#667085] text-center font-normal md:leading-6">
             Get started today by entering just a few details
           </p>
 
@@ -106,11 +107,11 @@ const Signup = () => {
             </button>
           </form>
 
-          <p className="mt-6 text-sm text-center text-[#344054]">
+          <p className="mt-6 text-sm font-medium md:leading-5.5 text-center text-[#344054]">
             Already have an account?{" "}
-            <a href="#" className="text-[#06543C] underline">
+            <Link href="/login" className="text-[#06543C] font-semibold">
               Login
-            </a>
+            </Link>
           </p>
         </div>
       </section>

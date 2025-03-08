@@ -12,7 +12,7 @@ const PhoneNumberInput = () => {
         <label className="text-sm text-gray-600 mb-1 block">Phone Number</label>
       )}
 
-      <div className="flex items-center border rounded-[8px] focus-within:ring-2 focus-within:ring-[#06543C]">
+      <div className="flex items-center border border-[#D0D5DD] rounded-[8px] focus-within:ring-2 focus-within:ring-[#06543C]">
         <select className="rounded-l-[8px] px-3 py-2 focus:outline-none bg-transparent">
           <option>US</option>
           <option>UK</option>
