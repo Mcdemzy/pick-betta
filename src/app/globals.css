@@ -3,19 +3,14 @@
 
 @font-face {
   font-family: "Gilroy-Bold";
-  src: url("/public/fonts/gilroy-bold.ttf") format("ttf"),
-    url("/public/fonts/Gilroy-Heavy.ttf") format("ttf"),
-    url("/public/fonts/Gilroy-Light.ttf") format("ttf"),
-    url("/public/fonts/Gilroy-Medium.ttf") format("ttf"),
-    url("/public/fonts/Gilroy-Regular.ttf") format("ttf");
+  src: url("/fonts/gilroy-bold.ttf") format("truetype"),
+    url("/fonts/Gilroy-Heavy.ttf") format("truetype"),
+    url("/fonts/Gilroy-Light.ttf") format("truetype"),
+    url("/fonts/Gilroy-Medium.ttf") format("truetype"),
+    url("/fonts/Gilroy-Regular.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}
-
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 :root {
@@ -39,19 +34,3 @@ body {
 .gilroy-bold {
   font-family: "Gilroy-Bold", sans-serif;
 }
-/* 
-.gilroy-heavy {
-  font-family: "Gilroy-Heavy", sans-serif;
-}
-
-.gilroy-light {
-  font-family: "Gilroy-Light", sans-serif;
-}
-
-.gilroy-medium {
-  font-family: "Gilroy-Medium", sans-serif;
-}
-
-.gilroy-regular {
-  font-family: "Gilroy-Regular", sans-serif;
-} */
