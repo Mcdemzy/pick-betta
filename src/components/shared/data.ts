@@ -932,3 +932,118 @@ export const deliverValueData = {
   imageSrc: "/images/deliverValueImage.svg",
   imageAlt: "How We Deliver Value",
 };
+
+export const termsSections = [
+  {
+    id: "nature-of-products",
+    title: "Nature of Products / Limitation of Liability",
+    content: `
+      ALL PRODUCTS (AS DEFINED ABOVE) AND SERVICES (AS DEFINED ABOVE) ARE PROVIDED “AS-IS.” WE DO NOT PROVIDE ANY EXPRESS OR IMPLIED WARRANTIES OF MERCHANTABILITY, SUITABILITY, OR COMPLETENESS FOR ANY OF THE PRODUCTS OR SERVICES FOR YOUR PARTICULAR NEEDS. THE PRODUCTS AND SERVICES ARE USED AT YOUR OWN RISK. IN NO EVENT WILL: i) PICKBETTA, ITS AGENTS, PARTNERS, OR AFFILIATES; OR ii) THE PROVIDERS, AUTHORS, OR PUBLISHERS OF ITS PRODUCTS, BE RESPONSIBLE OR LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER USED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THESE PRODUCTS OR THE USE OF THIS SITE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THESE PRODUCTS AND SERVICES ARE NOT INTENDED AS A SUBSTITUTE FOR COMMON SENSE AND THEY SHOULD ONLY BE A STARTING POINT FOR YOU. PRODUCTS MAY REQUIRE MODIFICATION TO SUIT YOUR PARTICULAR NEEDS AND YOUR STATE, PROVINCIAL, OR TERRITORIAL LAW REQUIREMENTS.
+    `,
+  },
+  {
+    id: "use-copyright",
+    title: "Use / Copyright",
+    content: `
+      <ul>
+        <li>
+          <strong>Product Use Outside of Defined Area</strong>
+          <p>We make no representations and give no warranties, express or implied, that making the Products available in any particular jurisdiction outside the United States, U.K., Canada, and Australia is permitted under such jurisdiction’s applicable laws or regulations. Accordingly, if making the Products or any part available in your jurisdiction or to you (by reason of nationality, residence, or otherwise) is prohibited, those Products are not offered for sale to you. You accept that if you are a resident outside the United States, U.K., Canada, and Australia, you must satisfy yourself that you are lawfully able to purchase the Products. We accept no liability, to the extent permitted by applicable law, for any costs, losses, or damages resulting from or related to the purchase or attempted purchase of the Products by persons: i) in jurisdictions outside the United States, U.K., Canada, or Australia; ii) who are nominees of or trustees for citizens, residents, or nationals of other countries; or iii) in the United States, U.K., Canada, or Australia who purchase products designed for jurisdictions other than their own.</p>
+        </li>
+        <li>
+          <strong>No Unlawful or Prohibited Use</strong>
+          <p>You agree not to use the Website, its Products, and/or its Services for any unlawful purpose or as prohibited by our terms, conditions, and notices set forth in this Agreement and elsewhere on the Website. You also agree that when using the Website, its Products, and/or its Services, you will not:</p>
+          <ol>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+            <li>Violate any applicable laws or regulations.</li>
+          </ol>
+          <p>All judgments concerning the applicability of these guidelines shall be at the sole and exclusive discretion of PickBetta. PickBetta reserves the right, in its sole discretion, to determine whether and what action to take in response to any violation. Any action or inaction in a particular instance shall not dictate or limit PickBetta’s response to a future complaint.</p>
+        </li>
+      </ul>
+    `,
+  },
+  {
+    id: "account-registrations",
+    title: "Account Registrations and Security",
+    content: `
+      Access to some of the Services, such as the Subscription Service, requires registration and the payment of a fee. In order to register, you agree to provide us with accurate and up-to-date information. You also represent that you have the legal right to use the email address(es) you provide.
+      <br /><br />
+      The account you register is only to be used by the person or organization who registered it. You agree not to disclose the account log-in or access code to any third party or authorize them to access or use the Services on your behalf. You shall immediately notify PickBetta of any unauthorized use of your user ID or password or any other breach of security. PickBetta cannot and will not be liable for any damage or loss arising from any unauthorized use of your account.
+    `,
+  },
+  {
+    id: "payment-fees",
+    title: "Payment/Fees and Subscription Renewal",
+    content: `
+      We reserve the right to change the Subscription Service’s fees or applicable charges and to institute new charges at any time.
+      <ul>
+        <li>
+          <strong>Account Cancellation</strong>
+          <p>If your account is paid in full, you may cancel your account and terminate this Agreement. We recommend exporting or saving any important documents and data because you will lose access to all content stored in your account after cancellation.</p>
+        </li>
+        <li>
+          <strong>Termination & Access Restriction</strong>
+          <p>The rights granted by PickBetta to use the Subscription Services are predicated upon a user’s: a) acknowledgment and acceptance of these Terms and Conditions of Use; b) payment for the access granted; and c) not sharing the access granted with any other person or entity.</p>
+          <p>If you violate or if we have grounds to suspect that you violated our guidelines set forth in these Terms and Conditions of Use and/or other use parameters included on the Website, we may suspend or terminate your account and refuse use of the Services (or any portion thereof).</p>
+          <p>PickBetta also reserves the right, in its sole discretion, to terminate your access to the Website and Services or any portion thereof at any time, without cause and/or without notice.</p>
+          <p>In the event that a user fails to pay for the access granted, or shares the access granted with any person or entity, or misuses the system by any means actionable under a federal, state, or local statute, code, regulation, law, or civil action, PickBetta will consider the user’s access as having been acquired by fraud or misrepresentation and will terminate the user’s access. In such a case, PickBetta retains the right to seek civil or criminal redress, the entire cost of which shall be borne solely by the user.</p>
+        </li>
+        <li>
+          <strong>Refund of Charges</strong>
+          <p>Except as specifically set forth in this section, all Subscription Services are prepaid. To cancel a current subscription and request a refund for the unused portion, call [Phone Number].</p>
+        </li>
+      </ul>
+    `,
+  },
+  {
+    id: "disclosure-removal",
+    title: "Disclosure and Removal of Information",
+    content: `
+      We will not disclose any of your personal information to third parties without your permission except in the following circumstances: i) to protect ourselves from liability; ii) to respond to a legal process or comply with the law; or iii) in accordance with our Privacy Policy.
+    `,
+  },
+  {
+    id: "consent-communications",
+    title: "Consent to Electronic Communications and Solicitation",
+    content: `
+      By registering with PickBetta, you understand that we may send you communications from PickBetta including but not limited to: i) notices about your use of the Services, including any notices concerning violations of use; ii) updates; and iii) promotional information and materials regarding the Products and Services, via electronic mail. We give you the opportunity to opt-out of receiving electronic mail from us by following the opt-out instructions provided in the message.
+    `,
+  },
+  {
+    id: "third-party-content",
+    title: "Third-Party Content, Sites, and Services",
+    content: `
+      The Website may contain links to other Internet sites, resources, and/or sponsors of the Website. We do not verify, warrant, endorse, or take responsibility for the availability, accuracy, completeness, or quality of the content contained in these outside sites. PickBetta is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by PickBetta of the site or any association with its operators.
+      <br /><br />
+      The Services and Products may contain features and functionalities linking you or providing you with certain functionality and access to third-party content, including websites, directories, servers, networks, systems, information and databases, applications, software, programs, products or services, and the Internet as a whole. We may also provide some content to you as part of the Services.
+      <ul>
+        <li>
+          <strong>Assignment</strong>
+          <p>We may assign, transfer, novate, or subcontract any or all of our rights and obligations under these Terms and Conditions of Use at any time.</p>
+        </li>
+      </ul>
+    `,
+  },
+  {
+    id: "modifications-terms",
+    title: "Modifications to the Terms and Conditions",
+    content: `
+      We may alter these Terms and Conditions of Use from time to time and post the new version on our Website, following which all use of the Website, Services, and Products will be governed by that version. You must check the Terms and Conditions of Use on the Website regularly.
+    `,
+  },
+  {
+    id: "entire-agreement",
+    title: "Entire Agreement",
+    content: `
+      These Terms and Conditions of Use, together with our Privacy Policy, any product disclaimers, and any payment method instructions, if any, constitute the entire agreement between you and us. You acknowledge that you have not entered into this agreement in reliance upon any statement, warranty, or representation made by PickBetta or any other person or entity, and you irrevocably and unconditionally waive any rights to claim damages and/or to rescind these Terms and Conditions of Use by reason of any misrepresentation (other than a fraudulent misrepresentation) that is not contained in the Terms and Conditions of Use, our Privacy Policy, any product disclaimers, and payment method instructions.
+    `,
+  },
+];
