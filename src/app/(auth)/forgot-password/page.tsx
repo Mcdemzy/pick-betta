@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import FloatingLabelInput from "@/components/auth/FloatingLabelInput";
 import AuthSidebar from "@/components/auth/AuthSidebar";
 import Link from "next/link";
@@ -25,6 +26,17 @@ const ForgotPassword = () => {
 
       <section className="w-full md:w-3/5 flex items-center justify-center p-8">
         <div className="w-full max-w-xl">
+          {/* Mobile Logo */}
+          <div className="md:hidden flex justify-center mb-6">
+            <Image
+              src="/images/logo.svg"
+              alt="Betta Logo"
+              width={158}
+              height={40}
+              className="h-10"
+            />
+          </div>
+
           <h2 className="md:text-4xl text-[1.5rem] font-semibold text-[#101828] text-center">
             Forgot Password
           </h2>

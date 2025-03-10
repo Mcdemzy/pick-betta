@@ -19,13 +19,12 @@ const Login = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (isFormValid) {
-      setShowCookiesPopup(true); // Show cookies banner
+      setShowCookiesPopup(true);
     }
   };
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row">
-      {/* Left Sidebar (Hidden on Mobile) */}
       <AuthSidebar />
 
       {/* Right Content */}
