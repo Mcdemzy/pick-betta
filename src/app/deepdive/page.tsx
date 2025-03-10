@@ -10,7 +10,7 @@ export default function DeepDive() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <section className="w-full h-[109px] bg-[#06543C] text-white px-5 pt-13.5 flex items-center">
+      <section className="w-full h-[109px] bg-[#06543C] text-white px-5 pt-13.5 pb-[15px] flex items-center">
         <button className="cursor-pointer" onClick={() => router.back()}>
           <BsChevronLeft className="w-10 h-10 bg-[#E4E7EC] text-[#06543C] rounded-full p-2.5" />
         </button>
