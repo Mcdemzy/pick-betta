@@ -94,15 +94,15 @@ const Signup = () => {
               />
               <label htmlFor="terms">
                 I agree to the{" "}
-                <a href="#" className="text-[#06543C] underline">
+                <Link href="#" className="text-[#06543C] underline">
                   {" "}
                   Terms & Conditions{" "}
-                </a>{" "}
+                </Link>{" "}
                 and
-                <a href="#" className="text-[#06543C] underline">
+                <Link href="#" className="text-[#06543C] underline">
                   {" "}
                   Privacy Policy{" "}
-                </a>
+                </Link>
               </label>
             </div>
 
