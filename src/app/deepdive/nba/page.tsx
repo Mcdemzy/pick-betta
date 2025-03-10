@@ -66,7 +66,7 @@ export default function DeepDiveNba() {
           </section>
 
           {/* Table Section */}
-          <section className="w-full min-h-screen bg-red-700"></section>
+          <section className="w-full min-h-screen bg-[#D0D5DD]"></section>
         </main>
       </main>
     </>
