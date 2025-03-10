@@ -1047,3 +1047,12 @@ export const termsSections = [
     `,
   },
 ];
+
+export const deepDiveLeagues = [
+  { name: "NFL", icon: "/icons/nfl.svg" },
+  { name: "NBA", icon: "/icons/nba.svg" },
+  { name: "NCAAB", icon: "/icons/ncaab.svg" },
+  { name: "NHL", icon: "/icons/nhl.svg" },
+  { name: "NFL", icon: "/icons/nfl.svg" },
+  { name: "NCAAB", icon: "/icons/ncaab.svg" },
+];
