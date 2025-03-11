@@ -5,7 +5,7 @@ import { BsChevronLeft } from "react-icons/bs";
 import { LuInfo } from "react-icons/lu";
 import { nbaDeepDiveStats } from "@/components/shared/data";
 
-export default function DeepDiveNba() {
+export default function DeepDiveNcaaf() {
   const router = useRouter();
 
   return (
@@ -17,7 +17,7 @@ export default function DeepDiveNba() {
             <BsChevronLeft className="w-10 h-10 bg-[#E4E7EC] text-[#06543C] rounded-full p-2.5" />
           </button>
           <p className="text-xl font-semibold leading-6 ml-4">
-            <span className="text-[#D8A428]">NBA</span> Deep Dive
+            <span className="text-[#D8A428]">NCAAF</span> Deep Dive
           </p>
         </section>
 
