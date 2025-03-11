@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { BsChevronLeft } from "react-icons/bs";
 import { LuInfo } from "react-icons/lu";
 import { nbaDeepDiveStats } from "@/components/shared/data";
+import Pagination from "@/components/deepdive/Pagination";
 
 export default function DeepDiveNhl() {
   const router = useRouter();
@@ -109,9 +110,7 @@ export default function DeepDiveNhl() {
                 ))}
               </tbody>
             </table>
-            <section className="w-full h-20 text-center flex justify-center items-center rounded-b-[8px]">
-              Page 1 of 10
-            </section>
+            <Pagination />
           </section>
         </main>
       </main>
