@@ -68,7 +68,7 @@ export default function DeepDiveNhl() {
           </section>
 
           {/* Table Section */}
-          <section className="w-full min-h-screen bg-[#FFFFFF]">
+          <section className="w-full min-h-screen bg-[#FFFFFF] pb-5">
             <table className="w-full border border-[#EAECF0] table-fixed">
               {/* <thead>
                 <tr>
@@ -109,6 +109,9 @@ export default function DeepDiveNhl() {
                 ))}
               </tbody>
             </table>
+            <section className="w-full h-20 text-center flex justify-center items-center rounded-b-[8px]">
+              Page 1 of 10
+            </section>
           </section>
         </main>
       </main>
