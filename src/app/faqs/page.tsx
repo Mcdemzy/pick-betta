@@ -9,7 +9,7 @@ import Footer from "@/components/shared/Footer";
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="bg-[#ECFDF3]">
         <Navbar />
 
         <section>
