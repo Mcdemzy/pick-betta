@@ -24,20 +24,22 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="w-full px-5 pb-3.5">
+    <main className="w-full px-5 pb-3.5 bg-white">
       {/* Mobile Section Tabs */}
-      <nav className="md:hidden w-full mb-5 overflow-x-auto flex gap-5 pb-2 h-21">
+      <nav className="md:hidden w-full mb-5 overflow-x-auto flex gap-5 pb-2 h-21 relative">
         {Object.keys(faqData).map((section) => (
           <button
             key={section}
             onClick={() => setActiveSection(section as FaqSections)}
-            className={`px-4 py-2 text-sm font-medium min-w-fit ${
-              activeSection === section
-                ? "text-green-600 border-b-2 border-green-600"
-                : "text-gray-500"
+            className={`px-4 py-2 text-sm font-medium min-w-fit relative ${
+              activeSection === section ? "text-green-600" : "text-gray-500"
             }`}
           >
             {section}
+            {/* Ruler */}
+            {activeSection === section && (
+              <div className="w-full h-1 bg-[#06543C] rounded-t-[100px] absolute bottom-0 left-0"></div>
+            )}
           </button>
         ))}
       </nav>
