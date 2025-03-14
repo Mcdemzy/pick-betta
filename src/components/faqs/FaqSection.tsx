@@ -31,8 +31,8 @@ export default function FAQPage() {
           <button
             key={section}
             onClick={() => setActiveSection(section as FaqSections)}
-            className={`px-4 py-2 text-sm font-medium min-w-fit relative ${
-              activeSection === section ? "text-green-600" : "text-gray-500"
+            className={`px-4 py-2 text-sm min-w-fit relative font-bold ${
+              activeSection === section ? "text-[#06543C]" : "text-[#475467]"
             }`}
           >
             {section}
@@ -45,7 +45,7 @@ export default function FAQPage() {
       </nav>
 
       {/* Desktop Layout */}
-      <div className="hidden md:flex w-full gap-8 mt-6 max-w-[1280px] m-auto">
+      <div className="hidden md:flex w-full gap-8 mt-6 max-w-[1280px] m-auto pt-25">
         {/* Sidebar */}
         <aside className="w-1/4 min-w-[250px] h-fit relative bg-[#ECFDF3] py-5 px-2.5">
           {/* Ruler */}
@@ -87,7 +87,7 @@ export default function FAQPage() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleSection(section as FaqSections)}
               >
-                <h2 className="text-lg font-bold text-[1.25rem] gilroy-bold text-[#1D2939] leading-7">
+                <h2 className="text-2xl font-bold gilroy-bold text-[#1D2939] leading-7">
                   {section}
                 </h2>
                 {openSection === section ? <FiMinus /> : <FiPlus />}
@@ -115,16 +115,23 @@ export default function FAQPage() {
       {/* Mobile FAQ Content */}
       <section className="block md:hidden space-y-3">
         {faqData[activeSection].map((item: FaqItem, index: number) => (
-          <div key={index} className="border rounded-lg p-3">
+          <div
+            key={index}
+            className="border-[0.5px] border-[#98A2B3] rounded-lg p-3"
+          >
             <div
               className="flex justify-between items-center cursor-pointer"
               onClick={() => toggleQuestion(item.question)}
             >
-              <h3 className="font-semibold">{item.question}</h3>
+              <h3 className="font-bold text-[.75rem] text-[#1D2939]">
+                {item.question}
+              </h3>
               {openQuestion === item.question ? <FiMinus /> : <FiPlus />}
             </div>
             {openQuestion === item.question && (
-              <p className="mt-2 text-gray-600">{item.answer}</p>
+              <p className="mt-2 text-[#667085] text-[.625rem]">
+                {item.answer}
+              </p>
             )}
           </div>
         ))}

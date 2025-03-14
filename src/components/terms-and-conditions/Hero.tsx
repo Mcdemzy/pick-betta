@@ -55,6 +55,17 @@ export default function Hero() {
                 terms, please discontinue your use of the website and any of our
                 features, services, or products immediately.
               </p>
+              <p className="text-[#475467] md:text-[1.125rem] md:leading-7.5 leading-6">
+                For the purposes of this Agreement: i) the “Website” shall mean
+                the site PickBetta.com; ii) “Products” shall collectively mean
+                all publications, tables, commentary, information, and/or
+                instructions found on the Website or otherwise provided by
+                PickBetta; iii) “Subscription Services” shall mean registered
+                access to PickBetta’s subscription program whereby users pay a
+                fee to access, download, and store Products; and iv) “Services”
+                shall mean collectively the Subscription Services and other new
+                or existing services offered by PickBetta on the Website.
+              </p>
             </div>
 
             {/* Terms & Conditions Sections */}
