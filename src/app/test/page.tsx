@@ -1,35 +1,30 @@
 "use client";
 
-import Image from "next/image";
+import Navbar from "@/components/shared/Navbar";
+import Hero from "@/components/terms-and-conditions/Hero";
+import Banner from "@/components/shared/Banner";
+import Footer from "@/components/shared/Footer";
 
-export default function Test() {
+export default function TermsAndConditions() {
   return (
     <>
-      <main className="h-screen flex flex-col md:flex-row">
-        <section className="hidden md:flex w-2/5 items-center">
-          <div className="bg-[#06543C] h-[98vh] w-full ml-4 rounded-[15px] px-13.5 flex flex-col justify-center">
-            <div className="mb-8">
-              <Image
-                src="/images/logo.svg"
-                alt="Betta Logo"
-                width={158}
-                height={40}
-                className="absolute top-12.5 left-13.5"
-              />
-            </div>
-            <div className="max-w-[493px]">
-              <h1 className="mb-6 text-6 gilroy-bold leading-[60px] font-bold text-white">
-                Unlock the Power of Sports Betting <br />
-                Data
-              </h1>
-              <p className="leading-6 text-white">
-                Lorem ipsum dolor sit amet consectetur. Etiam quam turpis ut eu.
-                Lectus quis eget viverra leo amet. Lorem ipsum dolor sit amet
-                consectetur. Etiam quam turpis ut eu.
-              </p>
-            </div>
+      <main>
+        <Navbar />
+        <section className="bg-[#ECFDF3] md:pt-10 md:pb-[107px] md:px-20 pt-17.5 px-5 pb-33 m-auto text-center">
+          <div className="flex flex-col gap-y-5 md:gap-y-7.5">
+            <h1 className="text-[#101828] md:text-[3.75rem] md:leading-18.5 tracking-[-2%] font-bold gilroy-bold text-[2.25rem] leading-11">
+              Terms & Conditions
+            </h1>
+            <h3 className="text-[#475467] md:text-[1.125rem] md:font-medium md:leading-7.5 leading-6">
+              Version 1.1 September 2024
+            </h3>
           </div>
         </section>
+
+        {/*  */}
+        <Hero />
+        <Banner />
+        <Footer />
       </main>
     </>
   );
