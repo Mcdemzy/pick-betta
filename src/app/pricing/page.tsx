@@ -1,9 +1,9 @@
 "use client";
 
-export default function Home() {
+export default function Pricing() {
   return (
     <>
-      <main className="text-5xl">Hello</main>
+      <main className="text-5xl">Pricing</main>
     </>
   );
 }
