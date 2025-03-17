@@ -9,6 +9,7 @@ interface FloatingLabelInputProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isPhoneNumberField?: boolean;
+  error?: string;
 }
 
 const FloatingLabelInput = ({

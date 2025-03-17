@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -11,14 +10,6 @@ interface EmailPopupProps {
 
 export default function EmailPopup({ email, onClose }: EmailPopupProps) {
   const router = useRouter();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push("/verification");
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, [router]);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/75">
