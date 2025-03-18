@@ -1059,10 +1059,16 @@ export const deepDiveLeagues = [
 
 export const nbaDeepDiveStats = [
   {
-    stat: "SUR (H/A)",
+    stat: "SUR (H)",
     home: 0,
     away: 0,
-    description: "Straight-up record (Home/Away).",
+    description: "Straight-up record (Home).",
+  },
+  {
+    stat: "SUR (A)",
+    home: 0,
+    away: 0,
+    description: "Straight-up record (Away).",
   },
   {
     stat: "ATS (H/A)",

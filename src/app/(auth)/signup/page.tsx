@@ -3,19 +3,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import FloatingLabelInput from "@/components/auth/FloatingLabelInput";
-import AuthSidebar from "@/components/auth/AuthSidebar";
-import PhoneNumberInput from "@/components/auth/PhoneNumberInput";
-import EmailPopup from "@/components/auth/EmailPopup";
 import Link from "next/link";
+import { z } from "zod";
 import API from "@/utils/axiosInstance";
 import { signupSchema } from "@/utils/validation";
-import { z } from "zod";
+import FloatingLabelInput from "@/components/auth/FloatingLabelInput";
+import PhoneNumberInput from "@/components/auth/PhoneNumberInput";
+import EmailPopup from "@/components/auth/EmailPopup";
+import AuthSidebar from "@/components/auth/AuthSidebar";
 
 const Signup = () => {
   const router = useRouter();
-
-  // State for form inputs
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -23,25 +21,31 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
-  // Handle Input Change
   const handleChange = (field: string, value: string) => {
-    setFormData({ ...formData, [field]: value });
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    setErrors((prev) => ({ ...prev, [field]: "" })); // Clear error on change
   };
 
-  // Handle Form Submission
-  const handleSignup = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrors({}); // Reset errors
+    setErrors({});
 
     try {
-      // Validate inputs with Zod
-      signupSchema.parse(formData);
+      // Validate form data
+      const result = signupSchema.safeParse(formData);
+      if (!result.success) {
+        const formattedErrors: Record<string, string> = {};
+        result.error.errors.forEach((err) => {
+          if (err.path) formattedErrors[err.path[0]] = err.message;
+        });
+        setErrors(formattedErrors);
+        return;
+      }
 
       if (!termsAccepted) {
         setErrors({ terms: "You must accept the terms and conditions" });
@@ -50,7 +54,7 @@ const Signup = () => {
 
       setLoading(true);
 
-      // Make API request
+      // API call
       const response = await API.post("/auth/register", {
         username: formData.username,
         email: formData.email,
@@ -59,26 +63,37 @@ const Signup = () => {
       });
 
       if (response.status === 201) {
-        setShowPopup(true); // Show verification popup
+        setShowPopup(true);
       }
     } catch (error: any) {
-      setLoading(false);
+      console.error("Signup error:", error.response?.data || error.message);
 
-      if (error instanceof z.ZodError) {
-        // Handle validation errors
-        const formattedErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
-          if (err.path) formattedErrors[err.path[0]] = err.message;
-        });
-        setErrors(formattedErrors);
+      // Handle backend-specific errors
+      if (error.response?.data?.message) {
+        const backendError = error.response.data.message.toLowerCase();
+
+        if (backendError.includes("username")) {
+          setErrors({ username: "Username is already in use" });
+        } else if (backendError.includes("email")) {
+          setErrors({ email: "Email is already in use" });
+        } else if (backendError.includes("phone")) {
+          setErrors({ phone: "Phone number is already in use" });
+        } else {
+          setErrors({ general: "Signup failed. Please try again later." });
+        }
       } else {
-        console.error("Signup error:", error.response?.data || error.message);
         setErrors({ general: "Signup failed. Please try again later." });
       }
     } finally {
       setLoading(false);
     }
   };
+
+  // Combine all errors into a single array
+  const errorMessages = Object.values(errors).filter(Boolean);
+
+  // Get the first error message to display
+  const firstErrorMessage = errorMessages[0];
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row">
@@ -89,7 +104,7 @@ const Signup = () => {
           <div className="md:hidden flex justify-center mb-6">
             <Image
               src="/images/logo.svg"
-              alt="Betta Logo"
+              alt="Logo"
               width={158}
               height={40}
               className="h-10"
@@ -103,17 +118,30 @@ const Signup = () => {
             Get started today by entering just a few details
           </p>
 
-          <form className="space-y-6" onSubmit={handleSignup}>
+          {/* Error Container */}
+          {firstErrorMessage && (
+            <div className="mb-6 h-12 flex items-center justify-center bg-[#FEF3F2] gap-2 text-[#B42318] text-sm font-medium rounded-lg text-center">
+              <Image
+                src="/icons/warning.svg"
+                alt="warning"
+                width={12}
+                height={12}
+              />
+              <p>{firstErrorMessage}</p>
+            </div>
+          )}
+
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <FloatingLabelInput
               type="text"
-              placeholder="Enter Username"
+              label="Username"
               value={formData.username}
               onChange={(e) => handleChange("username", e.target.value)}
               error={errors.username}
             />
             <FloatingLabelInput
               type="email"
-              placeholder="Enter Email"
+              label="Email"
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               error={errors.email}
@@ -125,22 +153,18 @@ const Signup = () => {
             />
             <FloatingLabelInput
               type="password"
-              placeholder="Enter Password"
+              label="Password"
               value={formData.password}
               onChange={(e) => handleChange("password", e.target.value)}
               error={errors.password}
             />
             <FloatingLabelInput
               type="password"
-              placeholder="Confirm Password"
+              label="Confirm Password"
               value={formData.confirmPassword}
               onChange={(e) => handleChange("confirmPassword", e.target.value)}
               error={errors.confirmPassword}
             />
-
-            {errors.general && (
-              <p className="text-red-500 text-sm">{errors.general}</p>
-            )}
 
             <div className="flex items-center text-sm">
               <input
@@ -163,10 +187,6 @@ const Signup = () => {
               </label>
             </div>
 
-            {errors.terms && (
-              <p className="text-red-500 text-sm">{errors.terms}</p>
-            )}
-
             <button
               type="submit"
               disabled={loading}
@@ -180,7 +200,6 @@ const Signup = () => {
         </div>
       </section>
 
-      {/* Show Email Verification Popup */}
       {showPopup && (
         <EmailPopup
           email={formData.email}

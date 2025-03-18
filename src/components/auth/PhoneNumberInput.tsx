@@ -28,17 +28,17 @@ const PhoneNumberInput = ({
         </select>
 
         <input
+          required
           type="tel"
           placeholder="Phone Number"
-          value={value} // ✅ Use the passed prop
-          onChange={(e) => onChange(e.target.value)} // ✅ Use the passed prop
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           className="flex-1 px-4 py-2 rounded-r-[8px] focus:outline-none"
         />
       </div>
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}{" "}
-      {/* ✅ Show error */}
+      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
   );
 };

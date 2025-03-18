@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full h-[101px] px-5 pt-11">
+      <nav className="w-full h-[101px] px-5 pt-11 bg-[#D1FADF]">
         <section className="sm:hidden w-full m-auto bg-[#ECFDF3] rounded-full py-3 px-5 flex items-center shadow-sm justify-between backdrop-blur-sm">
           <Link href="/">
             <Image

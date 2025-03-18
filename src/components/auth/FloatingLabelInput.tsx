@@ -1,23 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { RxEyeClosed } from "react-icons/rx";
+import { RxEyeClosed, RxEyeOpen } from "react-icons/rx";
 
 interface FloatingLabelInputProps {
   type: string;
-  placeholder: string;
+  label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  isPhoneNumberField?: boolean;
   error?: string;
 }
 
 const FloatingLabelInput = ({
   type,
-  placeholder,
+  label,
   value,
   onChange,
-  isPhoneNumberField = false,
+  error,
 }: FloatingLabelInputProps) => {
   const [focused, setFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -26,19 +25,18 @@ const FloatingLabelInput = ({
 
   return (
     <div className="relative w-full">
-      {!isPhoneNumberField && (focused || value) && (
-        <label className="text-sm text-gray-600 mb-1 block">
-          {placeholder}
-        </label>
+      {(focused || value) && (
+        <label className="text-sm text-gray-600 mb-1 block">{label}</label>
       )}
 
       <input
+        required
         type={isPasswordField && !showPassword ? "password" : "text"}
         value={value}
         onChange={onChange}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        placeholder={!focused && !value ? placeholder : ""}
+        placeholder={!focused && !value ? label : ""}
         className="w-full border border-[#D0D5DD] px-4 py-2 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#06543C] text-[#101828] md:leading-6 pr-10"
       />
 
@@ -50,9 +48,11 @@ const FloatingLabelInput = ({
             focused || value ? "top-9" : "top-3"
           }`}
         >
-          <RxEyeClosed size={18} />
+          {showPassword ? <RxEyeOpen size={18} /> : <RxEyeClosed size={18} />}
         </button>
       )}
+
+      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
   );
 };
