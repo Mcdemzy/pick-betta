@@ -11,6 +11,11 @@ interface EmailPopupProps {
 export default function EmailPopup({ email, onClose }: EmailPopupProps) {
   const router = useRouter();
 
+  const handleCheckEmail = () => {
+    // Pass the email as a query parameter
+    router.push(`/verification?email=${encodeURIComponent(email)}`);
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/75">
       <div className="bg-white rounded-lg p-6 w-96 text-center shadow-lg">
@@ -26,7 +31,7 @@ export default function EmailPopup({ email, onClose }: EmailPopupProps) {
           Check your email to verify your account.
         </p>
         <button
-          onClick={() => router.push("/verification")}
+          onClick={handleCheckEmail}
           className="mt-4 w-full bg-[#06543C] text-white py-2 rounded-lg font-semibold cursor-pointer"
         >
           Check Email

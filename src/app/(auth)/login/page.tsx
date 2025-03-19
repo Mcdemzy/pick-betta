@@ -7,19 +7,51 @@ import FloatingLabelInput from "@/components/auth/FloatingLabelInput";
 import AuthSidebar from "@/components/auth/AuthSidebar";
 import Link from "next/link";
 import CookiesBanner from "@/components/auth/CookiesBanner";
+import API from "@/utils/axiosInstance";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showCookiesPopup, setShowCookiesPopup] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const isFormValid = email.trim() !== "" && password.trim() !== "";
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
+
     if (isFormValid) {
-      setShowCookiesPopup(true);
+      setLoading(true);
+
+      try {
+        // Call the login endpoint
+        const response = await API.post("/auth/login", {
+          email,
+          password,
+        });
+
+        if (response.status === 200) {
+          if (response.data.data.emailVerified) {
+            // Redirect to dashboard for verified users
+            setShowCookiesPopup(true);
+            router.push("/dashboard");
+          } else {
+            // Call the /verify/email endpoint to send a new OTP
+            await API.post("/verify/email", { email });
+
+            // Redirect to verification page for unverified users
+            router.push(`/verification?email=${encodeURIComponent(email)}`);
+          }
+        }
+      } catch (error: any) {
+        console.error("Login error:", error.response?.data || error.message);
+        setError("Invalid email or password. Please try again.");
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -47,16 +79,29 @@ const Login = () => {
             Sign in to your account
           </p>
 
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 h-12 flex items-center justify-center bg-[#FEF3F2] gap-2 text-[#B42318] text-sm font-medium rounded-lg text-center">
+              <Image
+                src="/icons/warning.svg"
+                alt="warning"
+                width={12}
+                height={12}
+              />
+              <p className="text-sm">{error}</p>
+            </div>
+          )}
+
           <form className="space-y-6" onSubmit={handleLogin}>
             <FloatingLabelInput
               type="email"
-              placeholder="Enter Email"
+              label="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <FloatingLabelInput
               type="password"
-              placeholder="Enter Password"
+              label="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -76,12 +121,14 @@ const Login = () => {
 
             <button
               type="submit"
-              disabled={!isFormValid}
+              disabled={!isFormValid || loading}
               className={`w-full rounded px-4 py-2 text-white font-semibold ${
-                isFormValid ? "bg-[#06543C]" : "bg-[#98A2B3] cursor-not-allowed"
+                isFormValid && !loading
+                  ? "bg-[#06543C]"
+                  : "bg-[#98A2B3] cursor-not-allowed"
               }`}
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
 

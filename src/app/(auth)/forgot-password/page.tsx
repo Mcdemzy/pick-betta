@@ -48,7 +48,7 @@ const ForgotPassword = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <FloatingLabelInput
               type="email"
-              placeholder="Enter Email"
+              label="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
