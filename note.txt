@@ -1,3 +1,9 @@
+Bugs 
+
+Signup Page - Password input needs proper messages 
+
+This is the Fix 
+
 "use client";
 
 import { useState } from "react";
@@ -158,6 +164,17 @@ const Signup = () => {
               onChange={(e) => handleChange("password", e.target.value)}
               error={errors.password}
             />
+            {/* Password Hint */}
+            <p className="text-sm text-[#667085]">
+              Password must contain:
+              <ul className="list-disc pl-5">
+                <li>At least 2 uppercase letters</li>
+                <li>At least 3 lowercase letters</li>
+                <li>At least 2 digits</li>
+                <li>At least 1 special character</li>
+                <li>Minimum length of 8 characters</li>
+              </ul>
+            </p>
             <FloatingLabelInput
               type="password"
               label="Confirm Password"
@@ -218,3 +235,30 @@ const Signup = () => {
 };
 
 export default Signup;
+
+Modify the Validation Schema 
+
+import { z } from "zod";
+
+// Zod Schema for Signup
+export const signupSchema = z
+  .object({
+    username: z
+      .string()
+      .min(3, "Username must be at least 3 characters")
+      .max(20, "Username must be at most 20 characters"),
+    email: z.string().email("Invalid email format"),
+    phone: z.string().min(10, "Phone number is too short"),
+    password: z
+      .string()
+      .min(8, "Password must be at least 8 characters")
+      .regex(
+        /^(?=(?:.*[A-Z]){2})(?=(?:.*[a-z]){3})(?=(?:.*\d){2})(?=(?:.*[!@#$%^&*()_+|~=`{}\[\]:";'<>?,./\\-]){1}).{8,}$/,
+        "Password must contain at least 2 uppercase letters, 3 lowercase letters, 2 digits, and 1 special character."
+      ),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });
