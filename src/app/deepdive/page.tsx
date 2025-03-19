@@ -22,7 +22,6 @@ export default function DeepDive() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // 📱 MOBILE VIEW (same as original)
   if (!isDesktop) {
     return (
       <main className="min-h-screen bg-white">
@@ -85,7 +84,7 @@ export default function DeepDive() {
               <div
                 key={index}
                 onClick={() =>
-                  router.push(`/deepdive/${league.name.toLowerCase()}`)
+                  router.push(`/deepdive/${league.name.toLowerCase()}/matches`)
                 }
                 className="flex items-center gap-x-3 border border-[#E4E7EC] w-full rounded-[10px] px-4 py-2.5 cursor-pointer hover:bg-gray-100 transition"
               >
