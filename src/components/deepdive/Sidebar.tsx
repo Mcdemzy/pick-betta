@@ -1,39 +1,100 @@
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FiHome, FiSettings, FiLogOut } from "react-icons/fi";
+"use client";
 
-export default function Sidebar() {
-  const pathname = usePathname();
+import { useState } from "react";
+import Image from "next/image";
+import { LuHouse, LuLogOut } from "react-icons/lu";
+import { FaChevronDown } from "react-icons/fa";
+import { MdInsights } from "react-icons/md";
+import { BsQuestionCircle, BsGear, BsWallet2 } from "react-icons/bs";
+import { FaLayerGroup } from "react-icons/fa6";
+
+export default function SideBar() {
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
 
   return (
-    <aside className="hidden lg:flex flex-col w-[250px] min-h-screen bg-black text-white px-4 py-6">
-      <div className="text-2xl font-bold text-yellow-500">PickBetta</div>
+    <aside className="bg-black w-[260px] min-h-screen text-white flex flex-col justify-between p-4">
+      {/* Logo */}
+      <div className="flex justify-center">
+        <Image
+          src="/images/logo.svg"
+          width={180}
+          height={50}
+          alt="PickBetta Logo"
+          className="mt-4"
+        />
+      </div>
 
-      <nav className="mt-6 flex flex-col space-y-4">
-        <Link
-          href="/"
-          className={`flex items-center gap-3 px-3 py-2 rounded ${
-            pathname === "/" ? "bg-green-700" : "hover:bg-gray-800"
-          }`}
-        >
-          <FiHome size={20} />
-          Home
-        </Link>
+      {/* Menu Items */}
+      <nav className="mt-10 mx-auto flex flex-col gap-y-5">
+        <MenuItem icon={<LuHouse size={20} />} text="Home" />
+        <MenuItem icon={<MdInsights size={20} />} text="Betta Insights" />
 
-        <Link
-          href="/settings"
-          className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800"
-        >
-          <FiSettings size={20} />
-          Settings
-        </Link>
+        {/* Categories with dropdown */}
+        <div>
+          <button
+            onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+            className="flex items-center justify-between w-full p-2 hover:bg-gray-800 rounded-md"
+          >
+            <span className="flex items-center gap-3">
+              <FaLayerGroup size={20} />
+              Categories
+            </span>
+            <FaChevronDown
+              size={14}
+              className={`transition-transform ${
+                isCategoriesOpen ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </button>
+
+          {isCategoriesOpen && (
+            <div className="ml-8 mt-2 flex flex-col gap-1">
+              <SubMenuItem text="Betta Dawg Data" />
+              <SubMenuItem text="Betta Parlay" />
+              <SubMenuItem text="Betta Last Look" />
+              <SubMenuItem text="Betta Deep Dive" active />
+            </div>
+          )}
+        </div>
+
+        <MenuItem icon={<BsQuestionCircle size={20} />} text="Betta GPT" />
+        <MenuItem icon={<BsWallet2 size={20} />} text="Subscriptions" />
+        <p className="border border-white/30 my-5"></p>
+        <MenuItem icon={<BsGear size={20} />} text="Settings" />
       </nav>
 
-      {/* Logout Button */}
-      <button className="mt-auto flex items-center gap-3 px-3 py-2 rounded bg-red-600 hover:bg-red-700">
-        <FiLogOut size={20} />
-        Logout
-      </button>
+      {/* Bottom Section */}
+      <div className="mt-auto">
+        <button className="flex items-center gap-3 w-full p-3 bg-gray-800 rounded-md mt-2">
+          <LuLogOut size={20} />
+          Logout
+        </button>
+      </div>
     </aside>
   );
 }
+
+/* Generic Menu Item */
+const MenuItem = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
+  <button className="flex items-center gap-3 p-2 hover:bg-gray-800 rounded-md w-full">
+    {icon}
+    {text}
+  </button>
+);
+
+/* Sub Menu Item */
+const SubMenuItem = ({
+  text,
+  active = false,
+}: {
+  text: string;
+  active?: boolean;
+}) => (
+  <button
+    className={`p-2 text-sm w-full rounded-md ${
+      active ? "bg-[#06543C] text-white" : "hover:bg-gray-700 text-gray-400"
+    }`}
+  >
+    {text}
+  </button>
+);
