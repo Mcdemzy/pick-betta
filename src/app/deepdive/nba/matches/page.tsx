@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { ncaabMatches } from "@/components/shared/data"; // Import the data
+import { nbaMatches } from "@/components/shared/data"; // Import the data
 import Link from "next/link";
 
 export default function DeepDiveNbaMatches() {
@@ -44,7 +44,7 @@ export default function DeepDiveNbaMatches() {
 
             {/* Main Matches */}
             <section>
-              {ncaabMatches.map((match) => (
+              {nbaMatches.map((match) => (
                 <div key={match.id} className="w-full min-h-40.5 mb-2.5">
                   <section>
                     <div className="flex w-full gap-x-[5px] justify-between">
