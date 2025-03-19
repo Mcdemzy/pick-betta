@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BsChevronLeft } from "react-icons/bs";
 import { LuInfo } from "react-icons/lu";
-import { nbaDeepDiveStats } from "@/components/shared/data";
+import { ncaabDeepDiveStats } from "@/components/shared/data";
 import Pagination from "@/components/deepdive/Pagination";
 
 export default function DeepDiveNcaab() {
@@ -82,7 +82,7 @@ export default function DeepDiveNcaab() {
                 </tr>
               </thead> */}
               <tbody>
-                {nbaDeepDiveStats.map((item, index) => (
+                {ncaabDeepDiveStats.map((item, index) => (
                   <tr key={index} className="hover:bg-gray-50">
                     {/* Stat Name */}
                     <td className="border border-[#EAECF0] p-4 flex items-center justify-between">

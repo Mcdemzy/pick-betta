@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { ncaabMatches } from "@/components/shared/data"; // Import the data
+import Link from "next/link";
 
 export default function DeepDiveNcaabMatches() {
   const router = useRouter();
@@ -45,93 +46,97 @@ export default function DeepDiveNcaabMatches() {
             <section>
               {ncaabMatches.map((match) => (
                 <div key={match.id} className="w-full min-h-40.5 mb-2.5">
-                  <div className="flex w-full gap-x-[5px] justify-between">
-                    <div className="flex gap-1 items-center">
-                      <Image
-                        src={match.homeTeam.logo}
-                        width={24}
-                        height={24}
-                        alt={`${match.homeTeam.name} Logo`}
-                      />
-                      <p>{match.homeTeam.name}</p>
-                    </div>
+                  <section>
+                    <div className="flex w-full gap-x-[5px] justify-between">
+                      <div className="flex gap-1 items-center">
+                        <Image
+                          src={match.homeTeam.logo}
+                          width={24}
+                          height={24}
+                          alt={`${match.homeTeam.name} Logo`}
+                        />
+                        <p>{match.homeTeam.name}</p>
+                      </div>
 
-                    <div className="flex gap-x-0.5">
-                      <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
-                        <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
-                          {match.spread}
-                        </p>
-                        <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
-                          {match.money}
-                        </p>
-                      </div>
-                      <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
-                        <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
-                          {match.spread}
-                        </p>
-                        <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
-                          {match.money}
-                        </p>
-                      </div>
-                      <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
-                        <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
-                          {match.spread}
-                        </p>
-                        <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
-                          {match.money}
-                        </p>
+                      <div className="flex gap-x-0.5">
+                        <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
+                          <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
+                            {match.spread}
+                          </p>
+                          <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
+                            {match.money}
+                          </p>
+                        </div>
+                        <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
+                          <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
+                            {match.spread}
+                          </p>
+                          <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
+                            {match.money}
+                          </p>
+                        </div>
+                        <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
+                          <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
+                            {match.spread}
+                          </p>
+                          <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
+                            {match.money}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <p className="text-[#475467] text-sm font-medium leading-5.5">
-                    @
-                  </p>
-                  <div className="flex w-full gap-x-[5px] justify-between">
-                    <div className="flex gap-1 items-center">
-                      <Image
-                        src={match.awayTeam.logo}
-                        width={24}
-                        height={24}
-                        alt={`${match.awayTeam.name} Logo`}
-                      />
-                      <p>{match.awayTeam.name}</p>
-                    </div>
+                    <p className="text-[#475467] text-sm font-medium leading-5.5">
+                      @
+                    </p>
+                    <div className="flex w-full gap-x-[5px] justify-between">
+                      <div className="flex gap-1 items-center">
+                        <Image
+                          src={match.awayTeam.logo}
+                          width={24}
+                          height={24}
+                          alt={`${match.awayTeam.name} Logo`}
+                        />
+                        <p>{match.awayTeam.name}</p>
+                      </div>
 
-                    <div className="flex gap-x-0.5">
-                      <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
-                        <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
-                          {match.spread}
-                        </p>
-                        <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
-                          {match.money}
-                        </p>
-                      </div>
-                      <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
-                        <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
-                          {match.spread}
-                        </p>
-                        <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
-                          {match.money}
-                        </p>
-                      </div>
-                      <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
-                        <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
-                          {match.spread}
-                        </p>
-                        <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
-                          {match.money}
-                        </p>
+                      <div className="flex gap-x-0.5">
+                        <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
+                          <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
+                            {match.spread}
+                          </p>
+                          <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
+                            {match.money}
+                          </p>
+                        </div>
+                        <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
+                          <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
+                            {match.spread}
+                          </p>
+                          <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
+                            {match.money}
+                          </p>
+                        </div>
+                        <div className="bg-[#D1FADF] border border-[#D0D5DD] w-15 rounded-lg flex flex-col justify-center items-center gap-y-[5px] py-2">
+                          <p className="text-[#475467] text-[.75rem] font-medium leading-4.5">
+                            {match.spread}
+                          </p>
+                          <p className="text-[#06543C] text-[.75rem] leading-4.5 font-semibold">
+                            {match.money}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="flex justify-between mt-3 text-[.75rem] leading-4.5 text-[#101828]">
-                    <p className="text-[#06543C]">{match.date}</p>
-                    <div className="flex items-center gap-x-[5px]">
-                      <p>More Deep Dive</p>
-                      <BsChevronRight />
+                    <div className="flex justify-between mt-3 text-[.75rem] leading-4.5 text-[#101828]">
+                      <p className="text-[#06543C]">{match.date}</p>
+                      <Link href="/deepdive/ncaab">
+                        <div className="flex items-center gap-x-[5px]">
+                          <p>More Deep Dive</p>
+                          <BsChevronRight />
+                        </div>
+                      </Link>
                     </div>
-                  </div>
-                  <div className="border-[0.8px] border-[#D0D0D080] my-2.5"></div>
+                    <div className="border-[0.8px] border-[#D0D0D080] my-2.5"></div>
+                  </section>
                 </div>
               ))}
             </section>
