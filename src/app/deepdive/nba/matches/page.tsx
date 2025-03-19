@@ -23,7 +23,7 @@ export default function DeepDiveNbaMatches() {
 
         {/* Main Match Section */}
         <main className="w-full px-5 pb-5 min-h-fit">
-          <section className="w-full min-h-screen">
+          <section className="w-full">
             {/* Nav Items */}
             <nav>
               <ul className="min-h-12.5 w-full flex justify-between items-center px-5 py-2 text-[#475467] text-[.75rem] leading-4.5">
