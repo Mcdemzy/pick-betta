@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { ncaabMatches } from "@/components/shared/data"; // Import the data
+import { ncaabMatches } from "@/components/shared/data";
 import Link from "next/link";
 
 export default function DeepDiveNcaabMatches() {
