@@ -68,7 +68,7 @@ export default function DeepDive() {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col ml-[260px]">
         {/* Top Navbar */}
         <Navbar />
 
