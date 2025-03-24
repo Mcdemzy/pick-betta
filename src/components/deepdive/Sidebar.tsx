@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { LuHouse, LuLogOut } from "react-icons/lu";
 import { FaChevronDown } from "react-icons/fa";
@@ -10,9 +10,31 @@ import { FaLayerGroup } from "react-icons/fa6";
 
 export default function SideBar() {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Check screen size to toggle between mobile & desktop view
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint (1024px and above)
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Don't render sidebar on mobile
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
-    <aside className="bg-black w-[260px] min-h-screen text-white flex flex-col justify-between p-4">
+    <aside className="fixed bg-black w-[260px] h-screen text-white flex flex-col justify-between p-4 overflow-y-auto">
       {/* Logo */}
       <div className="flex justify-center">
         <Image
