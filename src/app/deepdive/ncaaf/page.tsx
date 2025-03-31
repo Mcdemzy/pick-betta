@@ -181,22 +181,13 @@ export default function DeepDiveNcaaf() {
               <tbody>
                 {ncaafDeepDiveStats.map((item, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-[#EAECF0] p-4 flex items-center justify-between">
-                      <span>{item.stat}</span>
-                      <div className="relative group">
-                        <LuInfo
-                          size={16}
-                          className="text-gray-500 cursor-pointer hover:text-gray-700"
-                        />
-                        <div className="absolute left-1/2 -translate-x-1/2 top-6 w-[180px] bg-black text-white text-xs rounded-md p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 text-center">
-                          {item.description || "No additional info"}
-                        </div>
-                      </div>
+                    <td className="border border-[#EAECF0] p-4">
+                      <span>{item.fullStat || item.stat}</span>
                     </td>
                     <td className="border border-[#EAECF0] text-center p-4">
-                      <div className="flex justify-evenly">
+                      <div className="flex justify-between">
                         <span>{item.home}</span>
-                        <span>{item.away}</span>
+                        <span className="mr-45">{item.away}</span>
                       </div>
                     </td>
                   </tr>
