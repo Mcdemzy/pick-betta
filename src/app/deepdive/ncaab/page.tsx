@@ -139,7 +139,7 @@ export default function DeepDiveNcaab() {
 
           {/* Match Details - Original table structure remains completely unchanged */}
           <section className="w-full">
-            <section className="min-h-[104px] w-full bg-[#F2F4F7] flex justify-evenly gap-x-2.5 rounded-t-[12px] pt-2.5 pb-0.5">
+            <section className="min-h-[104px] w-full bg-[#F2F4F7] flex justify-end gap-x-10 rounded-t-[12px] pt-2.5 pb-0.5">
               <div className="text-center flex flex-col gap-y-1">
                 <h2 className="text-[#101828] text-[0.75rem] leading-[18px] font-medium">
                   Maple Leafs
@@ -151,7 +151,7 @@ export default function DeepDiveNcaab() {
               <p className="text-[#101828] font-medium text-sm leading-[22px]">
                 @
               </p>
-              <div className="text-center flex flex-col gap-y-1 items-center">
+              <div className="text-center flex flex-col gap-y-1 items-center mr-31.5">
                 <h2 className="text-[#101828] text-[0.75rem] leading-[18px] font-medium">
                   Canadians
                 </h2>
