@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { LuHouse, LuLogOut } from "react-icons/lu";
 import { FaChevronDown } from "react-icons/fa";
 import { MdInsights } from "react-icons/md";
@@ -11,24 +13,32 @@ import { FaLayerGroup } from "react-icons/fa6";
 export default function SideBar() {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const pathname = usePathname();
 
   // Check screen size to toggle between mobile & desktop view
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint (1024px and above)
+      setIsDesktop(window.innerWidth >= 1024);
     };
-
-    // Initial check
     checkScreenSize();
-
-    // Add event listener for window resize
     window.addEventListener("resize", checkScreenSize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // Don't render sidebar on mobile
+  // Automatically open categories dropdown when on a category page
+  useEffect(() => {
+    const categoryRoutes = [
+      "/betta-dawg-data",
+      "/parlay",
+      "/betta-last-look",
+      "/deepdive",
+    ];
+    const shouldOpen = categoryRoutes.some((route) =>
+      pathname.startsWith(route)
+    );
+    setIsCategoriesOpen(shouldOpen);
+  }, [pathname]);
+
   if (!isDesktop) {
     return null;
   }
@@ -37,19 +47,31 @@ export default function SideBar() {
     <aside className="fixed bg-black w-[260px] h-screen text-white flex flex-col justify-between p-4 overflow-y-auto">
       {/* Logo */}
       <div className="flex justify-center">
-        <Image
-          src="/images/logo.svg"
-          width={180}
-          height={50}
-          alt="PickBetta Logo"
-          className="mt-4"
-        />
+        <Link href="/home">
+          <Image
+            src="/images/logo.svg"
+            width={180}
+            height={50}
+            alt="PickBetta Logo"
+            className="mt-4 cursor-pointer"
+          />
+        </Link>
       </div>
 
       {/* Menu Items */}
       <nav className="mt-10 mx-auto flex flex-col gap-y-5">
-        <MenuItem icon={<LuHouse size={20} />} text="Home" />
-        <MenuItem icon={<MdInsights size={20} />} text="Betta Insights" />
+        <MenuItem
+          icon={<LuHouse size={20} />}
+          text="Home"
+          href="/home"
+          active={pathname === "/home"}
+        />
+        <MenuItem
+          icon={<MdInsights size={20} />}
+          text="Betta Insights"
+          href="/betta-insights"
+          active={pathname === "/betta-insights"}
+        />
 
         {/* Categories with dropdown */}
         <div>
@@ -71,18 +93,49 @@ export default function SideBar() {
 
           {isCategoriesOpen && (
             <div className="ml-8 mt-2 flex flex-col gap-1">
-              <SubMenuItem text="Betta Dawg Data" />
-              <SubMenuItem text="Betta Parlay" />
-              <SubMenuItem text="Betta Last Look" />
-              <SubMenuItem text="Betta Deep Dive" active />
+              <SubMenuItem
+                text="Betta Dawg Data"
+                href="/betta-dawg-data"
+                active={pathname.startsWith("/betta-dawg-data")}
+              />
+              <SubMenuItem
+                text="Betta Parlay"
+                href="/parlay"
+                active={pathname.startsWith("/parlay")}
+              />
+              <SubMenuItem
+                text="Betta Last Look"
+                href="/betta-last-look"
+                active={pathname.startsWith("/betta-last-look")}
+              />
+              <SubMenuItem
+                text="Betta Deep Dive"
+                href="/deepdive"
+                active={pathname.startsWith("/deepdive")}
+              />
             </div>
           )}
         </div>
 
-        <MenuItem icon={<BsQuestionCircle size={20} />} text="Betta GPT" />
-        <MenuItem icon={<BsWallet2 size={20} />} text="Subscriptions" />
+        <MenuItem
+          icon={<BsQuestionCircle size={20} />}
+          text="Betta GPT"
+          href="/betta-gpt"
+          active={pathname === "/betta-gpt"}
+        />
+        <MenuItem
+          icon={<BsWallet2 size={20} />}
+          text="Subscriptions"
+          href="/subscriptions"
+          active={pathname === "/subscriptions"}
+        />
         <p className="border border-white/30 my-5"></p>
-        <MenuItem icon={<BsGear size={20} />} text="Settings" />
+        <MenuItem
+          icon={<BsGear size={20} />}
+          text="Settings"
+          href="/settings"
+          active={pathname === "/settings"}
+        />
       </nav>
 
       {/* Bottom Section */}
@@ -97,26 +150,46 @@ export default function SideBar() {
 }
 
 /* Generic Menu Item */
-const MenuItem = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
-  <button className="flex items-center gap-3 p-2 hover:bg-gray-800 rounded-md w-full">
-    {icon}
-    {text}
-  </button>
+const MenuItem = ({
+  icon,
+  text,
+  href,
+  active = false,
+}: {
+  icon: React.ReactNode;
+  text: string;
+  href: string;
+  active?: boolean;
+}) => (
+  <Link href={href}>
+    <button
+      className={`flex items-center gap-3 p-2 hover:bg-gray-800 rounded-md w-full ${
+        active ? "bg-[#06543C] text-white" : ""
+      }`}
+    >
+      {icon}
+      {text}
+    </button>
+  </Link>
 );
 
 /* Sub Menu Item */
 const SubMenuItem = ({
   text,
+  href,
   active = false,
 }: {
   text: string;
+  href: string;
   active?: boolean;
 }) => (
-  <button
-    className={`p-2 text-sm w-full rounded-md ${
-      active ? "bg-[#06543C] text-white" : "hover:bg-gray-700 text-gray-400"
-    }`}
-  >
-    {text}
-  </button>
+  <Link href={href}>
+    <button
+      className={`p-2 text-sm w-full rounded-md ${
+        active ? "bg-[#06543C] text-white" : "hover:bg-gray-700 text-gray-400"
+      }`}
+    >
+      {text}
+    </button>
+  </Link>
 );
