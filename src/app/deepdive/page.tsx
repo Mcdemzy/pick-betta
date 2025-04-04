@@ -3,24 +3,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BsChevronLeft } from "react-icons/bs";
 import { deepDiveLeagues } from "@/components/shared/data";
-import Sidebar from "@/components/deepdive/Sidebar"; // Sidebar for desktop
-import Navbar from "@/components/deepdive/Navbar"; // Navbar for desktop
-import { useState, useEffect } from "react";
+import Sidebar from "@/components/deepdive/Sidebar";
+import Navbar from "@/components/deepdive/Navbar";
+import useResponsive from "@/hooks/useResponsive";
 
 export default function DeepDive() {
   const router = useRouter();
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  // Check screen size to toggle between mobile & desktop view
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint (1024px and above)
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  const { isDesktop } = useResponsive();
 
   if (!isDesktop) {
     return (
@@ -37,9 +26,9 @@ export default function DeepDive() {
 
         {/* Leagues List */}
         <section className="px-5 mt-5 grid grid-cols-2 gap-4">
-          {deepDiveLeagues.map((league, index) => (
+          {deepDiveLeagues.map((league) => (
             <div
-              key={index}
+              key={league.name}
               onClick={() =>
                 router.push(`/deepdive/${league.name.toLowerCase()}/matches`)
               }
@@ -61,28 +50,19 @@ export default function DeepDive() {
     );
   }
 
-  // 🖥 DESKTOP VIEW
   return (
     <main className="flex min-h-screen bg-white">
-      {/* Sidebar */}
       <Sidebar />
-
-      {/* Main Content */}
       <div className="flex-1 flex flex-col ml-[260px]">
-        {/* Top Navbar */}
         <Navbar />
-
-        {/* Deep Dive Content */}
         <div className="px-6 py-5">
           <h1 className="text-xl font-semibold mb-4">
             <span className="text-[#D8A428]">Betta</span> Deep Dive
           </h1>
-
-          {/* Leagues Grid */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {deepDiveLeagues.map((league, index) => (
+            {deepDiveLeagues.map((league) => (
               <div
-                key={index}
+                key={league.name}
                 onClick={() =>
                   router.push(`/deepdive/${league.name.toLowerCase()}/matches`)
                 }
