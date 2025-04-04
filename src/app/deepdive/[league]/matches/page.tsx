@@ -188,7 +188,7 @@ export default function LeagueMatchesPage() {
                   </div>
 
                   {/* VS Separator */}
-                  <div className="flex justify-center my-1">
+                  <div className="flex my-1">
                     <span className="text-[#475467] text-xs">@</span>
                   </div>
 
@@ -228,11 +228,11 @@ export default function LeagueMatchesPage() {
                   </div>
 
                   {/* Match Footer */}
-                  <div className="flex justify-between items-center mt-3 pt-2 border-t border-[#E4E7EC]">
+                  <div className="flex justify-between items-center mt-3 pt-2  border-[#E4E7EC]">
                     <span className="text-[#06543C] text-xs">{match.date}</span>
                     <Link href={`/deepdive/${league}/${match.id}/stats`}>
                       <div className="flex items-center gap-1 text-xs text-[#101828]">
-                        <span>View Stats</span>
+                        <span>More Deepdive</span>
                         <BsChevronRight className="text-xs" />
                       </div>
                     </Link>
@@ -313,19 +313,19 @@ export default function LeagueMatchesPage() {
                     <p className="text-[#101828]">{match.homeTeam.name}</p>
                   </div>
                   <div className="flex gap-x-4">
-                    <div className="bg-[#D1FADF] border border-[#D0D5DD] rounded-lg px-4 py-2 text-center min-w-[80px]">
+                    <div className="bg-[#D1FADF] border border-[#D0D5DD] w-55.5 rounded-lg px-4 py-2 text-center min-w-[80px]">
                       <p className="text-[#475467] text-sm">{match.spread}</p>
                       <p className="text-[#06543C] text-sm font-semibold">
                         {match.money}
                       </p>
                     </div>
-                    <div className="bg-[#D1FADF] border border-[#D0D5DD] rounded-lg px-4 py-2 text-center min-w-[80px]">
+                    <div className="bg-[#D1FADF] border border-[#D0D5DD] w-55.5 rounded-lg px-4 py-2 text-center min-w-[80px]">
                       <p className="text-[#475467] text-sm">{match.spread}</p>
                       <p className="text-[#06543C] text-sm font-semibold">
                         {match.money}
                       </p>
                     </div>
-                    <div className="bg-[#D1FADF] border border-[#D0D5DD] rounded-lg px-4 py-2 text-center min-w-[80px]">
+                    <div className="bg-[#D1FADF] border border-[#D0D5DD] w-55.5 rounded-lg px-4 py-2 text-center min-w-[80px]">
                       <p className="text-[#475467] text-sm">{match.total}</p>
                       <p className="text-[#06543C] text-sm font-semibold">
                         {match.money}
@@ -335,7 +335,7 @@ export default function LeagueMatchesPage() {
                 </div>
 
                 {/* VS Separator */}
-                <div className="flex justify-center my-1">
+                <div className="flex my-1">
                   <span className="text-[#475467] text-sm">@</span>
                 </div>
 
@@ -351,19 +351,19 @@ export default function LeagueMatchesPage() {
                     <p className="text-[#101828]">{match.awayTeam.name}</p>
                   </div>
                   <div className="flex gap-x-4">
-                    <div className="bg-[#D1FADF] border border-[#D0D5DD] rounded-lg px-4 py-2 text-center min-w-[80px]">
+                    <div className="bg-[#D1FADF] border border-[#D0D5DD] w-55.5 rounded-lg px-4 py-2 text-center min-w-[80px]">
                       <p className="text-[#475467] text-sm">{match.spread}</p>
                       <p className="text-[#06543C] text-sm font-semibold">
                         {match.money}
                       </p>
                     </div>
-                    <div className="bg-[#D1FADF] border border-[#D0D5DD] rounded-lg px-4 py-2 text-center min-w-[80px]">
+                    <div className="bg-[#D1FADF] border border-[#D0D5DD] w-55.5 rounded-lg px-4 py-2 text-center min-w-[80px]">
                       <p className="text-[#475467] text-sm">{match.spread}</p>
                       <p className="text-[#06543C] text-sm font-semibold">
                         {match.money}
                       </p>
                     </div>
-                    <div className="bg-[#D1FADF] border border-[#D0D5DD] rounded-lg px-4 py-2 text-center min-w-[80px]">
+                    <div className="bg-[#D1FADF] border border-[#D0D5DD] w-55.5 rounded-lg px-4 py-2 text-center min-w-[80px]">
                       <p className="text-[#475467] text-sm">{match.total}</p>
                       <p className="text-[#06543C] text-sm font-semibold">
                         {match.money}
@@ -373,11 +373,11 @@ export default function LeagueMatchesPage() {
                 </div>
 
                 {/* Match Footer */}
-                <div className="flex justify-between items-center pt-3 border-t border-[#E4E7EC]">
+                <div className="flex justify-between items-center pt-3  border-[#E4E7EC]">
                   <span className="text-[#06543C] text-sm">{match.date}</span>
                   <Link href={`/deepdive/${league}/${match.id}/stats`}>
                     <div className="flex items-center gap-2 text-sm text-[#101828]">
-                      <span>View Stats</span>
+                      <span>More Deepdive</span>
                       <BsChevronRight className="text-sm" />
                     </div>
                   </Link>
