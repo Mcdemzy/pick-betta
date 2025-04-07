@@ -1,17 +1,26 @@
+// app/deepdive/ncaab/page.tsx
 "use client";
+import useResponsive from "@/hooks/useResponsive";
+import { ncaabDeepDiveStats } from "@/components/shared/data";
+import Pagination from "@/components/deepdive/Pagination";
+import DeepDiveLayout from "@/components/deepdive/DeepDiveLayout";
+import MatchDetails from "@/components/deepdive/MatchDetails";
+import StatsTable from "@/components/deepdive/StatsTable";
 
-import SideBar from "@/components/deepdive/Sidebar";
-import Image from "next/image";
-import Bracket1 from "@/components/brackets/Bracket1";
-import Bracket2 from "@/components/brackets/Bracket2";
-import Bracket3 from "@/components/brackets/Bracket3";
+export default function DeepDiveNcaab() {
+  const { isDesktop } = useResponsive();
 
-export default function Home() {
   return (
-    <div>
-      <Bracket1 />
-      <Bracket2 />
-      <Bracket3 />
-    </div>
+    <DeepDiveLayout
+      league="NCAAB"
+      isDesktop={isDesktop}
+      statsData={ncaabDeepDiveStats}
+    >
+      <main className="px-5">
+        <MatchDetails isDesktop={isDesktop} />
+        <StatsTable statsData={ncaabDeepDiveStats} isDesktop={isDesktop} />
+        <Pagination />
+      </main>
+    </DeepDiveLayout>
   );
 }
