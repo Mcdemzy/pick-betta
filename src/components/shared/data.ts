@@ -1054,6 +1054,8 @@ export const deepDiveLeagues = [
   { name: "NHL", icon: "/icons/nhl.svg" },
   { name: "NFL", icon: "/icons/nfl.svg" },
   { name: "NCAAF", icon: "/icons/ncaab.svg" },
+  { name: "MLB", icon: "/icons/ncaab.svg" },
+  { name: "Soccer", icon: "/icons/ncaab.svg" },
 ];
 
 export const nbaDeepDiveStats = [
