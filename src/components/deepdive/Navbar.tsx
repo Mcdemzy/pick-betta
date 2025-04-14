@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="w-full flex items-center justify-between px-6 py-3 bg-gray-100 border-b">
+    <header className="w-full flex items-center justify-between px-6 py-3 bg-gray-100">
       {/* Search Bar - Centered */}
       <div className="flex-1 flex justify-center">
         <div className="relative w-[300px]">

@@ -254,7 +254,7 @@ export default function LeagueMatchesPage() {
         <Navbar />
         <div className="px-6 py-5">
           <h1 className="text-xl font-semibold mb-4 text-[#1A1A1A]">
-            Betta Parlay - {activeLeague.toUpperCase()}
+            Betta Parlay
           </h1>
 
           {/* Sports Navigation */}
