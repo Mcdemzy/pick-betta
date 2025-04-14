@@ -1,23 +1,37 @@
 "use client";
-import { useParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { BsChevronLeft } from "react-icons/bs";
+import { useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { BsChevronLeft, BsChevronDown, BsChevronUp } from "react-icons/bs";
 import Sidebar from "@/components/deepdive/Sidebar";
 import Navbar from "@/components/deepdive/Navbar";
 import useResponsive from "@/hooks/useResponsive";
-import { getLeagueStats } from "@/lib/api/deepdive"; // Changed from getMatchStats to getLeagueStats
-import DeepDiveLayout from "@/components/deepdive/DeepDiveLayout";
+import { getLeagueStats } from "@/lib/api/deepdive";
 import MatchDetails from "@/components/deepdive/MatchDetails";
 import StatsTable from "@/components/deepdive/StatsTable";
 import Pagination from "@/components/deepdive/Pagination";
+
+const statSections = [
+  "Anytime Goal Scorer",
+  "First Goal Scorer",
+  "Clean Sheets",
+  "Total Shots",
+];
 
 export default function MatchStatsPage() {
   const router = useRouter();
   const { isDesktop } = useResponsive();
   const { league } = useParams() as { league: string };
 
-  // Get the predefined stats structure for this league
   const statsData = getLeagueStats(league);
+
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (title: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+  };
 
   if (!isDesktop) {
     return (
@@ -34,8 +48,36 @@ export default function MatchStatsPage() {
         </section>
 
         {/* Stats Content */}
-        <section className="p-5">
-          <div className="bg-red-500 w-full h-screen "></div>
+        <section className="p-5 flex flex-col gap-y-2.5">
+          {statSections.map((title) => (
+            <div
+              key={title}
+              className="w-full border border-[#D0D5DD] rounded-[8px] px-3.5 py-2.5"
+            >
+              <div
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleSection(title)}
+              >
+                <p className="text-[#1D2939] font-semibold text-[.75rem] leading-4.5">
+                  {title}
+                </p>
+                {openSections[title] ? (
+                  <BsChevronUp size={20} />
+                ) : (
+                  <BsChevronDown size={20} />
+                )}
+              </div>
+
+              {openSections[title] && (
+                <div className="mt-3">
+                  {/* This is where you can map or load actual stat data later */}
+                  <p className="text-sm text-gray-500 italic">
+                    Stats for "{title}" go here.
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
         </section>
       </main>
     );
@@ -45,7 +87,6 @@ export default function MatchStatsPage() {
   return (
     <main className="flex min-h-screen bg-white">
       <Sidebar />
-
       <div className="flex-1 flex flex-col ml-[260px]">
         <Navbar />
         <div className="px-6 py-5">

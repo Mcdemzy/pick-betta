@@ -2678,3 +2678,48 @@ export const nflMatches = [
   },
   // Add more matches as needed
 ];
+
+// data.ts
+
+export const parlayStats = [
+  {
+    title: "Anytime Goal Scorer",
+    stats: [
+      {
+        name: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper.",
+        email: "olivia@untitledui.com",
+      },
+      {
+        name: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper.",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+  {
+    title: "First Goal Scorer",
+    stats: [
+      {
+        name: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper.",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+  {
+    title: "Total Player Points (1+)",
+    stats: [
+      {
+        name: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper.",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+  // Continue the same structure for all other stat categories...
+];
