@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { BsChevronLeft, BsChevronDown, BsChevronUp } from "react-icons/bs";
 import Sidebar from "@/components/deepdive/Sidebar";
 import Navbar from "@/components/deepdive/Navbar";
@@ -9,28 +9,27 @@ import { getLeagueStats } from "@/lib/api/deepdive";
 import MatchDetails from "@/components/deepdive/MatchDetails";
 import StatsTable from "@/components/deepdive/StatsTable";
 import Pagination from "@/components/deepdive/Pagination";
-
-const statSections = [
-  "Anytime Goal Scorer",
-  "First Goal Scorer",
-  "Clean Sheets",
-  "Total Shots",
-];
+import Image from "next/image";
+import { useState } from "react";
+import { parlayItems, DropdownItem } from "@/components/shared/data";
 
 export default function MatchStatsPage() {
   const router = useRouter();
   const { isDesktop } = useResponsive();
   const { league } = useParams() as { league: string };
-
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const statsData = getLeagueStats(league);
 
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-
-  const toggleSection = (title: string) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [title]: !prev[title],
-    }));
+  const toggleItem = (id: string) => {
+    setExpandedItems((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
   };
 
   if (!isDesktop) {
@@ -48,42 +47,76 @@ export default function MatchStatsPage() {
         </section>
 
         {/* Stats Content */}
-        <section className="p-5 flex flex-col gap-y-2.5">
-          {statSections.map((title) => (
-            <div
-              key={title}
-              className="w-full border border-[#D0D5DD] rounded-[8px] px-3.5 py-2.5"
-            >
+        <section className="p-5">
+          <div className="w-full flex flex-col gap-y-2.5">
+            {parlayItems.map((item) => (
               <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleSection(title)}
+                key={item.id}
+                className="w-full rounded-[8px] border border-[#D0D5DD] overflow-hidden"
               >
-                <p className="text-[#1D2939] font-semibold text-[.75rem] leading-4.5">
-                  {title}
-                </p>
-                {openSections[title] ? (
-                  <BsChevronUp size={20} />
-                ) : (
-                  <BsChevronDown size={20} />
+                <button
+                  className="w-full h-10 p-3.5 flex justify-between items-center"
+                  onClick={() => toggleItem(item.id)}
+                >
+                  <p className="text-[#1D2939] font-semibold text-[.75rem] leading-4.5">
+                    {item.title}
+                  </p>
+                  {expandedItems.has(item.id) ? (
+                    <BsChevronUp size={20} className="font-semibold" />
+                  ) : (
+                    <BsChevronDown size={20} className="font-semibold" />
+                  )}
+                </button>
+
+                {expandedItems.has(item.id) && (
+                  <div className="p-3.5 space-y-3">
+                    {item.content.map((content, index) => (
+                      <div key={index}>
+                        <div className="flex flex-col gap-y-1.5">
+                          <div className="flex items-center gap-x-2.5 relative">
+                            <Image
+                              src="/images/parlayImage.jpg"
+                              width={26}
+                              height={26}
+                              alt=""
+                              className="rounded-full"
+                            />
+                            <Image
+                              src="/icons/horse.svg"
+                              width={12}
+                              height={12}
+                              alt=""
+                              className="rounded-full absolute bottom-0 left-4"
+                            />
+                            <p className="text-[#1D2939] font-medium">
+                              {content.player}
+                            </p>
+                          </div>
+                          <p className="text-[#667085] leading-4.5">
+                            {content.description}
+                          </p>
+                          {content.email && (
+                            <p className="text-[#667085] text-sm mt-1">
+                              {content.email}
+                            </p>
+                          )}
+                        </div>
+                        {index < item.content.length - 1 && (
+                          <hr className="my-2 text-[#E4E7EC]" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
-
-              {openSections[title] && (
-                <div className="mt-3">
-                  {/* This is where you can map or load actual stat data later */}
-                  <p className="text-sm text-gray-500 italic">
-                    Stats for "{title}" go here.
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
       </main>
     );
   }
 
-  // Desktop View
+  // Desktop View (unchanged)
   return (
     <main className="flex min-h-screen bg-white">
       <Sidebar />

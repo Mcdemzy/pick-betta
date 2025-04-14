@@ -2723,3 +2723,90 @@ export const parlayStats = [
   },
   // Continue the same structure for all other stat categories...
 ];
+
+export type DropdownItem = {
+  id: string;
+  title: string;
+  content: {
+    player: string;
+    description: string;
+    email?: string;
+  }[];
+};
+
+export const parlayItems: DropdownItem[] = [
+  {
+    id: "anytime",
+    title: "Anytime Goal Scorer",
+    content: [
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper.",
+        email: "olivia@untitledui.com",
+      },
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper.",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+  {
+    id: "first",
+    title: "First Goal Scorer",
+    content: [
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper. Quam lacus a eros commodo scelerisque egestas integer egestas semper",
+        email: "olivia@untitledui.com",
+      },
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper. Quam lacus a eros commodo scelerisque egestas integer egestas semper",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+  {
+    id: "total-points-1",
+    title: "Total Player Points (1+)",
+    content: [
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper. Quam lacus a eros commodo scelerisque egestas integer egestas semper",
+        email: "olivia@untitledui.com",
+      },
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper. Quam lacus a eros commodo scelerisque egestas integer egestas semper",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+  // Add all other items following the same structure
+  // ...
+  {
+    id: "first-team",
+    title: "First Team to Score",
+    content: [
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper. Quam lacus a eros commodo scelerisque egestas integer egestas semper",
+        email: "olivia@untitledui.com",
+      },
+      {
+        player: "Cam Thomas",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Quam lacus a eros commodo scelerisque egestas integer egestas semper. Quam lacus a eros commodo scelerisque egestas integer egestas semper",
+        email: "olivia@untitledui.com",
+      },
+    ],
+  },
+];
