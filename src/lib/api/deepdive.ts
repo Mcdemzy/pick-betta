@@ -10,6 +10,8 @@ import {
   ncaabDeepDiveStats,
   nhlDeepDiveStats,
   ncaafDeepDiveStats,
+  mlbMatches,
+  soccerMatches,
 } from "@/components/shared/data";
 
 // Map league names to their matches data
@@ -19,6 +21,8 @@ const leagueMatchesMap: Record<string, any[]> = {
   ncaab: ncaabMatches,
   nhl: nhlMatches,
   ncaaf: ncaafMatches,
+  mlb: mlbMatches,
+  soccer: soccerMatches,
 };
 
 // Map league names to their stats data

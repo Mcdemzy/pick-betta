@@ -2582,6 +2582,104 @@ export const ncaafMatches = [
   },
   // Add more matches as needed
 ];
+
+export const mlbMatches = [
+  {
+    id: 1,
+    homeTeam: {
+      name: "CAR Hurricanes",
+      logo: "/icons/nflHero.svg",
+    },
+    awayTeam: {
+      name: "Opponent Team 1",
+      logo: "/icons/nflHero.svg",
+    },
+    spread: "+1.5",
+    money: "-250",
+    total: "+1.5",
+    date: "FRI 6:00P CT",
+  },
+  {
+    id: 2,
+    homeTeam: {
+      name: "CAR Hurricanes",
+      logo: "/icons/nflHero.svg",
+    },
+    awayTeam: {
+      name: "Opponent Team 2",
+      logo: "/icons/nflHero.svg",
+    },
+    spread: "+1.5",
+    money: "-250",
+    total: "+1.5",
+    date: "FRI 6:00P CT",
+  },
+  {
+    id: 3,
+    homeTeam: {
+      name: "CAR Hurricanes",
+      logo: "/icons/nflHero.svg",
+    },
+    awayTeam: {
+      name: "Opponent Team 3",
+      logo: "/icons/nflHero.svg",
+    },
+    spread: "+1.5",
+    money: "-250",
+    total: "+1.5",
+    date: "FRI 6:00P CT",
+  },
+  // Add more matches as needed
+];
+export const soccerMatches = [
+  {
+    id: 1,
+    homeTeam: {
+      name: "CAR Hurricanes",
+      logo: "/icons/nflHero.svg",
+    },
+    awayTeam: {
+      name: "Opponent Team 1",
+      logo: "/icons/nflHero.svg",
+    },
+    spread: "+1.5",
+    money: "-250",
+    total: "+1.5",
+    date: "FRI 6:00P CT",
+  },
+  {
+    id: 2,
+    homeTeam: {
+      name: "CAR Hurricanes",
+      logo: "/icons/nflHero.svg",
+    },
+    awayTeam: {
+      name: "Opponent Team 2",
+      logo: "/icons/nflHero.svg",
+    },
+    spread: "+1.5",
+    money: "-250",
+    total: "+1.5",
+    date: "FRI 6:00P CT",
+  },
+  {
+    id: 3,
+    homeTeam: {
+      name: "CAR Hurricanes",
+      logo: "/icons/nflHero.svg",
+    },
+    awayTeam: {
+      name: "Opponent Team 3",
+      logo: "/icons/nflHero.svg",
+    },
+    spread: "+1.5",
+    money: "-250",
+    total: "+1.5",
+    date: "FRI 6:00P CT",
+  },
+  // Add more matches as needed
+];
+
 export const nhlMatches = [
   {
     id: 1,
