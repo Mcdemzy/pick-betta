@@ -13,6 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
       <body suppressHydrationWarning className="antialiased">
         {children}
       </body>
