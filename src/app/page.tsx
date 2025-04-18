@@ -12,13 +12,13 @@ import Banner from "@/components/shared/Banner";
 export default function Test() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection />
-      <ThirdSection />
-      <OffersSection />
-      <DeliverValueSection />
-      <Banner />
-      <Footer />
+      {/* <ThirdSection /> */}
+      {/* <OffersSection /> */}
+      {/* <DeliverValueSection /> */}
+      {/* <Banner /> */}
+      {/* <Footer /> */}
     </>
   );
 }
